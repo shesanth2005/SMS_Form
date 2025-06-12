@@ -1,0 +1,96 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SQLite;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml.Linq;
+
+namespace SMS_Form.Data
+{
+    internal static class Migration
+    {
+        public static void CreateTables()
+        {
+            using (var getdbconn = DbConfig.GetConnection())
+            {
+        
+
+                string tableQueries = @" 
+    CREATE TABLE IF NOT EXISTS Courses ( 
+        Id INTEGER PRIMARY KEY AUTOINCREMENT, 
+        Name TEXT NOT NULL 
+    );
+
+    CREATE TABLE IF NOT EXISTS Users (
+        UserID INTEGER PRIMARY KEY AUTOINCREMENT,
+        Username TEXT NOT NULL,
+        Password TEXT NOT NULL,
+        Role TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS Lecturers ( 
+        Id INTEGER PRIMARY KEY AUTOINCREMENT, 
+        Name TEXT NOT NULL, 
+        Address TEXT NOT NULL, 
+        Telephone TEXT NOT NULL,
+        UserId INTEGER NOT NULL,
+        FOREIGN KEY (UserId) REFERENCES Users(UserID)
+    );
+
+    CREATE TABLE IF NOT EXISTS Students ( 
+        Id INTEGER PRIMARY KEY AUTOINCREMENT, 
+        Name TEXT NOT NULL,
+        Address TEXT NOT NULL,
+        CourseId INTEGER NOT NULL,
+        UserId INTEGER NOT NULL,
+        FOREIGN KEY (CourseId) REFERENCES Courses(Id),
+        FOREIGN KEY (UserId) REFERENCES Users(UserID)
+    );
+
+    CREATE TABLE IF NOT EXISTS StudentLecturer ( 
+        StudentId INTEGER NOT NULL, 
+        LecturerId INTEGER NOT NULL, 
+        PRIMARY KEY (StudentId, LecturerId), 
+        FOREIGN KEY (StudentId) REFERENCES Students(Id), 
+        FOREIGN KEY (LecturerId) REFERENCES Lecturers(Id)
+    );
+
+    CREATE TABLE IF NOT EXISTS LecturerCourse (
+        LecturerId INTEGER NOT NULL,
+        CourseId INTEGER NOT NULL,
+        PRIMARY KEY (LecturerId, CourseId),
+        FOREIGN KEY (LecturerId) REFERENCES Lecturers(Id),
+        FOREIGN KEY (CourseId) REFERENCES Courses(Id)
+    );
+
+    CREATE TABLE IF NOT EXISTS Rooms(
+        Id INTEGER PRIMARY KEY AUTOINCREMENT,
+        RoomName TEXT NOT NULL,
+        RoomType INTEGER NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS Subjects (
+        Id INTEGER PRIMARY KEY AUTOINCREMENT,
+        Name TEXT NOT NULL,
+        CourseId INTEGER NOT NULL,
+        FOREIGN KEY (CourseId) REFERENCES Courses(Id)
+    );
+";
+
+
+
+
+                SQLiteCommand Command = new SQLiteCommand(tableQueries,getdbconn);
+                Command.ExecuteNonQuery();
+
+                MessageBox.Show("Sucessfully Table Created");
+
+
+
+
+            }
+        }
+    }
+}
