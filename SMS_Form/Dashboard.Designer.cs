@@ -60,7 +60,7 @@
             // 
             // btn_course
             // 
-            this.btn_course.Location = new System.Drawing.Point(3, 381);
+            this.btn_course.Location = new System.Drawing.Point(3, 342);
             this.btn_course.Name = "btn_course";
             this.btn_course.Size = new System.Drawing.Size(216, 65);
             this.btn_course.TabIndex = 1;
@@ -72,7 +72,7 @@
             // 
             this.btn_subject.Location = new System.Drawing.Point(3, 275);
             this.btn_subject.Name = "btn_subject";
-            this.btn_subject.Size = new System.Drawing.Size(219, 100);
+            this.btn_subject.Size = new System.Drawing.Size(216, 61);
             this.btn_subject.TabIndex = 2;
             this.btn_subject.Text = "Manage Subject";
             this.btn_subject.UseVisualStyleBackColor = true;
@@ -127,7 +127,7 @@
             this.mainMenuPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.mainMenuPanel.Location = new System.Drawing.Point(0, 0);
             this.mainMenuPanel.Name = "mainMenuPanel";
-            this.mainMenuPanel.Size = new System.Drawing.Size(223, 393);
+            this.mainMenuPanel.Size = new System.Drawing.Size(223, 465);
             this.mainMenuPanel.TabIndex = 8;
             this.mainMenuPanel.WrapContents = false;
             // 
@@ -160,7 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 393);
+            this.ClientSize = new System.Drawing.Size(770, 465);
             this.Controls.Add(this.mainMenuPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dashboard";
