@@ -50,6 +50,24 @@ namespace SMS_Form.Controller
         {
             using (var conn = DbConfig.GetConnection())
             {
+                string checkQuery = "SELECT COUNT(*) FROM LecturerCourse WHERE LecturerId = @lecturerId AND CourseId = @courseId";
+                using (var checkCmd = new SQLiteCommand(checkQuery, conn))
+                {
+                    checkCmd.Parameters.AddWithValue("@lecturerId", lectureCourse.LecturerId);
+                    checkCmd.Parameters.AddWithValue("@courseId", lectureCourse.CourseId);
+
+                    int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+                    if (count > 0)
+                    {
+                        return "This lecturer is already assigned to this course.";
+                    }
+                }
+
+
+
+
+
+
                 string insertQuery = "INSERT INTO LecturerCourse (LecturerId, CourseId) VALUES (@lecturerId, @courseId)";
 
                 SQLiteCommand cmd = new SQLiteCommand(insertQuery, conn);
@@ -58,7 +76,7 @@ namespace SMS_Form.Controller
 
                 cmd.ExecuteNonQuery();
 
-                return "LectureCourse assigned successfully.";
+                return "Lecturer assigned to this course successfully.";
             }
         }
 

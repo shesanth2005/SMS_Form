@@ -159,6 +159,7 @@ namespace SMS_Form
 
             // Show message
             MessageBox.Show(message);
+            LoadLecturerCourses();
         }
 
         private void LoadLecturerCourses()
