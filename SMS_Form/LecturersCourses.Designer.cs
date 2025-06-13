@@ -37,6 +37,7 @@
             this.CourseView = new System.Windows.Forms.DataGridView();
             this.LecturerCourseView = new System.Windows.Forms.DataGridView();
             this.btn_add = new System.Windows.Forms.Button();
+            this.btn_update = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LecturerView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CourseView)).BeginInit();
@@ -122,6 +123,7 @@
             this.LecturerCourseView.Name = "LecturerCourseView";
             this.LecturerCourseView.Size = new System.Drawing.Size(240, 150);
             this.LecturerCourseView.TabIndex = 6;
+            this.LecturerCourseView.SelectionChanged += new System.EventHandler(this.LecturerCourseView_CellContentClick);
             // 
             // btn_add
             // 
@@ -133,11 +135,22 @@
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
+            // btn_update
+            // 
+            this.btn_update.Location = new System.Drawing.Point(271, 136);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(75, 23);
+            this.btn_update.TabIndex = 8;
+            this.btn_update.Text = "Update";
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
             // LecturersCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 450);
+            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.LecturerCourseView);
             this.Controls.Add(this.CourseView);
@@ -165,5 +178,6 @@
         private System.Windows.Forms.DataGridView CourseView;
         private System.Windows.Forms.DataGridView LecturerCourseView;
         private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Button btn_update;
     }
 }

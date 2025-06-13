@@ -6,9 +6,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace SMS_Form
 {
@@ -16,7 +18,9 @@ namespace SMS_Form
     {
         private int selectedCourseId = -1;
         private int selectedLectureId = -1;
-       
+        private int oldCourseId = -1;
+        private int oldLectureId = -1;
+
 
         public LecturersCourses()
         {
@@ -24,7 +28,20 @@ namespace SMS_Form
             LoadCourses();
             LoadLecturers();
             LoadLecturerCourses();
-            
+            ClearForm();
+
+        }
+
+        private void ClearForm()
+        {
+            selectedCourseId = -1;
+            selectedLectureId = -1;
+            oldCourseId = -1;
+            oldLectureId = -1;
+            lecturerName.Clear();
+            courseName.Clear();
+
+
         }
 
         private void LoadCourses()
@@ -181,5 +198,77 @@ namespace SMS_Form
             LecturerCourseView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            if (oldLectureId == -1 || oldCourseId == -1)
+            {
+                MessageBox.Show("Please select a lecturer-course pair to update.");
+                return;
+            }
+
+            Model.LectureCourse lectureCourse = new Model.LectureCourse();
+
+            //LecturerId = selectedLectureId,
+            //CourseId = selectedCourseId
+
+            if (oldLectureId == selectedLectureId && oldCourseId == selectedCourseId)
+            {
+                MessageBox.Show("No changes detected. Please select a different lecturer or course to update.");
+                return;
+            }
+            else if (oldCourseId == selectedCourseId && oldLectureId != selectedLectureId)
+            {
+                lectureCourse.LecturerId = selectedLectureId;
+                lectureCourse.CourseId = oldCourseId;
+            }
+            else if (oldLectureId == selectedLectureId && oldCourseId != selectedCourseId)
+            {
+                lectureCourse.LecturerId = oldLectureId;
+                lectureCourse.CourseId = selectedCourseId;
+            }
+            else if (oldLectureId != selectedLectureId && oldCourseId != selectedCourseId)
+            {
+                lectureCourse.LecturerId = selectedLectureId;
+                lectureCourse.CourseId = selectedCourseId;
+            }
+
+                // Save to DB
+            LectureCourseController lectureCourseController = new LectureCourseController();
+            string message = lectureCourseController.UpdateLectureCourse(oldLectureId,oldCourseId,lectureCourse);
+
+            // Show message
+            MessageBox.Show(message);
+            LoadLecturerCourses();
+            ClearForm();
+
+
+        }
+
+        private void LecturerCourseView_CellContentClick(object sender, EventArgs e)
+        {
+            if (LecturerCourseView.SelectedRows.Count > 0)
+            {
+                var row = LecturerCourseView.SelectedRows[0];
+                var lecturerCourseView = row.DataBoundItem as LectureCourse;
+
+                if (lecturerCourseView != null)
+                {
+                
+
+                    oldCourseId = lecturerCourseView.CourseId;
+                    oldLectureId = lecturerCourseView.LecturerId;
+                   
+
+                    LectureCourseController lecturerCourseController = new LectureCourseController();
+                    var lecturerCourse = lecturerCourseController.GetLecturerCourseById(oldLectureId,oldCourseId);
+                    if (lecturerCourse != null)
+                    {
+                        lecturerName.Text = lecturerCourse.LecturerName;
+                        courseName.Text = lecturerCourse.CourseName;
+                    }
+                }
+            }
+
+        }
     }
 }
