@@ -45,6 +45,7 @@ namespace SMS_Form
         {
             LecturerAccount account = new LecturerAccount();
             account.ShowDialog();
+            LoadLecturers();
         }
 
 

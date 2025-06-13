@@ -58,6 +58,7 @@
       <DependentUpon>AddLecturerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller\CourseController.cs" />
+    <Compile Include="Controller\LectureCourseController.cs" />
     <Compile Include="Controller\RoomController.cs" />
     <Compile Include="Controller\StudentController.cs" />
     <Compile Include="Controller\SubjectController.cs" />
@@ -96,6 +97,7 @@
       <DependentUpon>LecturersCourses.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Course.cs" />
+    <Compile Include="Model\LectureCourse.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\Subject.cs" />

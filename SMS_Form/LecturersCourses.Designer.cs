@@ -30,12 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lecturerName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.courseName = new System.Windows.Forms.TextBox();
             this.LecturerView = new System.Windows.Forms.DataGridView();
             this.CourseView = new System.Windows.Forms.DataGridView();
             this.LecturerCourseView = new System.Windows.Forms.DataGridView();
+            this.btn_add = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LecturerView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CourseView)).BeginInit();
@@ -62,21 +63,21 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Course Name";
             // 
-            // textBox1
+            // lecturerName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(170, 27);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(230, 25);
-            this.textBox1.TabIndex = 2;
+            this.lecturerName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lecturerName.Location = new System.Drawing.Point(170, 27);
+            this.lecturerName.Multiline = true;
+            this.lecturerName.Name = "lecturerName";
+            this.lecturerName.ReadOnly = true;
+            this.lecturerName.Size = new System.Drawing.Size(230, 25);
+            this.lecturerName.TabIndex = 2;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.courseName);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.lecturerName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(20, 20);
@@ -103,7 +104,7 @@
             this.LecturerView.Name = "LecturerView";
             this.LecturerView.Size = new System.Drawing.Size(240, 150);
             this.LecturerView.TabIndex = 4;
-            this.LecturerView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LecturerView_CellContentClick);
+            this.LecturerView.SelectionChanged += new System.EventHandler(this.LecturerView_CellContentClick);
             // 
             // CourseView
             // 
@@ -122,11 +123,22 @@
             this.LecturerCourseView.Size = new System.Drawing.Size(240, 150);
             this.LecturerCourseView.TabIndex = 6;
             // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(457, 136);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(75, 23);
+            this.btn_add.TabIndex = 7;
+            this.btn_add.Text = "Add";
+            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
             // LecturersCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 450);
+            this.Controls.Add(this.btn_add);
             this.Controls.Add(this.LecturerCourseView);
             this.Controls.Add(this.CourseView);
             this.Controls.Add(this.LecturerView);
@@ -146,11 +158,12 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox lecturerName;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox courseName;
         private System.Windows.Forms.DataGridView LecturerView;
         private System.Windows.Forms.DataGridView CourseView;
         private System.Windows.Forms.DataGridView LecturerCourseView;
+        private System.Windows.Forms.Button btn_add;
     }
 }
