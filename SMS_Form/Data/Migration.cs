@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SMS_Form.Model;
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SMS_Form.Data
 {
@@ -77,15 +79,17 @@ namespace SMS_Form.Data
         CourseId INTEGER NOT NULL,
         FOREIGN KEY (CourseId) REFERENCES Courses(Id)
     );
-    CREATE TABLE IF NOT EXISTS Timetable (
+CREATE TABLE IF NOT EXISTS Timetable (
     Id INTEGER PRIMARY KEY AUTOINCREMENT,
     SubjectId INTEGER NOT NULL,
     Day TEXT NOT NULL,
-    TimeSlot TEXT NOT NULL,
+    StartTime TEXT NOT NULL,
+    EndTime TEXT NOT NULL,
     RoomId INTEGER NOT NULL,
     FOREIGN KEY (SubjectId) REFERENCES Subjects(Id),
     FOREIGN KEY (RoomId) REFERENCES Rooms(Id)
-    );
+);
+
 
 ";
 
@@ -99,6 +103,17 @@ namespace SMS_Form.Data
 
 
 
+                //CREATE TABLE IF NOT EXISTS Attendance(
+                //    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                //    StudentId INTEGER NOT NULL,
+                //    SubjectId INTEGER NOT NULL,
+                //    Date TEXT NOT NULL,
+                //    Status TEXT NOT NULL,
+                //    FOREIGN KEY (StudentId) REFERENCES Students(Id),
+                //    FOREIGN KEY (SubjectId) REFERENCES Subjects(Id)
+
+
+                //);
 
             }
         }
