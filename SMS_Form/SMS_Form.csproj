@@ -63,6 +63,7 @@
     <Compile Include="Controller\StudentController.cs" />
     <Compile Include="Controller\SubjectController.cs" />
     <Compile Include="Controller\LecturerController.cs" />
+    <Compile Include="Controller\TimetableController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="CourseForm.cs">
       <SubType>Form</SubType>
@@ -102,6 +103,7 @@
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\Subject.cs" />
     <Compile Include="Model\Lecturer.cs" />
+    <Compile Include="Model\Timetable.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="RoomForm.cs">
       <SubType>Form</SubType>
@@ -135,6 +137,12 @@
     </Compile>
     <Compile Include="TeacherManagement.Designer.cs">
       <DependentUpon>TeacherManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeTable.Designer.cs">
+      <DependentUpon>TimeTable.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddLecturerForm.resx">
       <DependentUpon>AddLecturerForm.cs</DependentUpon>
@@ -177,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherManagement.resx">
       <DependentUpon>TeacherManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeTable.resx">
+      <DependentUpon>TimeTable.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".vs\SMS_Form.csproj.dtbcache.json" />
     <None Include="bin\Debug\SchoolDB.db" />

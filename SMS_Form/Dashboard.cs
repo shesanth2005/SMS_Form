@@ -58,5 +58,11 @@ namespace SMS_Form
             LecturersCourses lecturersCourses = new LecturersCourses();
             lecturersCourses.ShowDialog();
         }
+
+        private void btn_timetable_Click(object sender, EventArgs e)
+        {
+             TimeTable timeTable = new TimeTable();
+             timeTable.ShowDialog();    
+        }
     }
 }

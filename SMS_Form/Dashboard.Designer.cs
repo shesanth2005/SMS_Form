@@ -38,6 +38,7 @@
             this.mainMenuPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panelLecturerSubmenu = new System.Windows.Forms.Panel();
             this.btn_lec_course = new System.Windows.Forms.Button();
+            this.btn_timetable = new System.Windows.Forms.Button();
             this.mainMenuPanel.SuspendLayout();
             this.panelLecturerSubmenu.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +61,7 @@
             // 
             // btn_course
             // 
-            this.btn_course.Location = new System.Drawing.Point(3, 342);
+            this.btn_course.Location = new System.Drawing.Point(3, 362);
             this.btn_course.Name = "btn_course";
             this.btn_course.Size = new System.Drawing.Size(216, 65);
             this.btn_course.TabIndex = 1;
@@ -70,7 +71,7 @@
             // 
             // btn_subject
             // 
-            this.btn_subject.Location = new System.Drawing.Point(3, 275);
+            this.btn_subject.Location = new System.Drawing.Point(3, 249);
             this.btn_subject.Name = "btn_subject";
             this.btn_subject.Size = new System.Drawing.Size(216, 61);
             this.btn_subject.TabIndex = 2;
@@ -82,7 +83,7 @@
             // 
             this.btn_room.Location = new System.Drawing.Point(3, 189);
             this.btn_room.Name = "btn_room";
-            this.btn_room.Size = new System.Drawing.Size(217, 80);
+            this.btn_room.Size = new System.Drawing.Size(217, 54);
             this.btn_room.TabIndex = 3;
             this.btn_room.Text = "Manage Room";
             this.btn_room.UseVisualStyleBackColor = true;
@@ -107,7 +108,7 @@
             // 
             this.btn_lec_dtail.Location = new System.Drawing.Point(2, 3);
             this.btn_lec_dtail.Name = "btn_lec_dtail";
-            this.btn_lec_dtail.Size = new System.Drawing.Size(200, 25);
+            this.btn_lec_dtail.Size = new System.Drawing.Size(200, 36);
             this.btn_lec_dtail.TabIndex = 7;
             this.btn_lec_dtail.Text = "LecturerDetails";
             this.btn_lec_dtail.UseVisualStyleBackColor = true;
@@ -122,6 +123,7 @@
             this.mainMenuPanel.Controls.Add(this.panelLecturerSubmenu);
             this.mainMenuPanel.Controls.Add(this.btn_room);
             this.mainMenuPanel.Controls.Add(this.btn_subject);
+            this.mainMenuPanel.Controls.Add(this.btn_timetable);
             this.mainMenuPanel.Controls.Add(this.btn_course);
             this.mainMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.mainMenuPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -141,20 +143,30 @@
             this.panelLecturerSubmenu.Location = new System.Drawing.Point(20, 112);
             this.panelLecturerSubmenu.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.panelLecturerSubmenu.Name = "panelLecturerSubmenu";
-            this.panelLecturerSubmenu.Size = new System.Drawing.Size(202, 74);
+            this.panelLecturerSubmenu.Size = new System.Drawing.Size(203, 74);
             this.panelLecturerSubmenu.TabIndex = 9;
             this.panelLecturerSubmenu.Visible = false;
             // 
             // btn_lec_course
             // 
             this.btn_lec_course.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_lec_course.Location = new System.Drawing.Point(1, 24);
+            this.btn_lec_course.Location = new System.Drawing.Point(0, 45);
             this.btn_lec_course.Name = "btn_lec_course";
             this.btn_lec_course.Size = new System.Drawing.Size(200, 25);
             this.btn_lec_course.TabIndex = 8;
             this.btn_lec_course.Text = "Lecturer Courses";
             this.btn_lec_course.UseVisualStyleBackColor = true;
             this.btn_lec_course.Click += new System.EventHandler(this.btn_lec_course_Click);
+            // 
+            // btn_timetable
+            // 
+            this.btn_timetable.Location = new System.Drawing.Point(3, 316);
+            this.btn_timetable.Name = "btn_timetable";
+            this.btn_timetable.Size = new System.Drawing.Size(217, 40);
+            this.btn_timetable.TabIndex = 10;
+            this.btn_timetable.Text = "Timetable";
+            this.btn_timetable.UseVisualStyleBackColor = true;
+            this.btn_timetable.Click += new System.EventHandler(this.btn_timetable_Click);
             // 
             // Dashboard
             // 
@@ -183,5 +195,6 @@
         private System.Windows.Forms.FlowLayoutPanel mainMenuPanel;
         private System.Windows.Forms.Button btn_lec_course;
         private System.Windows.Forms.Panel panelLecturerSubmenu;
+        private System.Windows.Forms.Button btn_timetable;
     }
 }

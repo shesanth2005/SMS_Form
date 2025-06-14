@@ -120,7 +120,6 @@ namespace SMS_Form
             List<Lecturer> lecturers = lecturerController.GetAllLecturers();
             LecturerView.DataSource = lecturers;
 
-            // Hide internal database ID if needed
 
 
             LecturerView.ClearSelection();
@@ -188,7 +187,7 @@ namespace SMS_Form
 
             // Optional: Hide internal IDs (if needed)
             if (LecturerCourseView.Columns.Contains("LecturerId"))
-                LecturerCourseView.Columns["LecturerId"].Visible = false;
+                LecturerCourseView.Columns["LecturerId"].Visible = true;
 
             if (LecturerCourseView.Columns.Contains("CourseId"))
                 LecturerCourseView.Columns["CourseId"].Visible = false;
@@ -202,7 +201,7 @@ namespace SMS_Form
         {
             if (oldLectureId == -1 || oldCourseId == -1)
             {
-                MessageBox.Show("Please select a lecturer-course pair to update.");
+                MessageBox.Show("Please select a lecturer-course pair from LecturerCourse table to update.");
                 return;
             }
 
@@ -269,6 +268,30 @@ namespace SMS_Form
                 }
             }
 
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (oldLectureId == -1 || oldCourseId == -1)
+            {
+                MessageBox.Show("Please select a lecturer-course pair from LecturerCourse table to delete.");
+                return;
+            }
+
+            var confirmResult = MessageBox.Show(
+                "Are you sure to delete this lecturer-course assignment?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                LectureCourseController lectureCourseController = new LectureCourseController();
+
+                lectureCourseController.DeleteLectureCourse(oldLectureId, oldCourseId);
+                LoadLecturerCourses();
+                ClearForm();
+                MessageBox.Show("Lecturer-course assignment deleted successfully.");
+            }
         }
     }
 }

@@ -38,6 +38,7 @@
             this.LecturerCourseView = new System.Windows.Forms.DataGridView();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LecturerView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CourseView)).BeginInit();
@@ -119,14 +120,15 @@
             // LecturerCourseView
             // 
             this.LecturerCourseView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.LecturerCourseView.Location = new System.Drawing.Point(633, 190);
+            this.LecturerCourseView.Location = new System.Drawing.Point(589, 190);
             this.LecturerCourseView.Name = "LecturerCourseView";
-            this.LecturerCourseView.Size = new System.Drawing.Size(240, 150);
+            this.LecturerCourseView.Size = new System.Drawing.Size(342, 150);
             this.LecturerCourseView.TabIndex = 6;
             this.LecturerCourseView.SelectionChanged += new System.EventHandler(this.LecturerCourseView_CellContentClick);
             // 
             // btn_add
             // 
+            this.btn_add.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.Location = new System.Drawing.Point(457, 136);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
@@ -137,6 +139,7 @@
             // 
             // btn_update
             // 
+            this.btn_update.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.Location = new System.Drawing.Point(271, 136);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(75, 23);
@@ -145,11 +148,23 @@
             this.btn_update.UseVisualStyleBackColor = true;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
+            // btn_delete
+            // 
+            this.btn_delete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete.Location = new System.Drawing.Point(114, 136);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(75, 23);
+            this.btn_delete.TabIndex = 9;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
             // LecturersCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 450);
+            this.ClientSize = new System.Drawing.Size(952, 450);
+            this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.LecturerCourseView);
@@ -179,5 +194,6 @@
         private System.Windows.Forms.DataGridView LecturerCourseView;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_update;
+        private System.Windows.Forms.Button btn_delete;
     }
 }

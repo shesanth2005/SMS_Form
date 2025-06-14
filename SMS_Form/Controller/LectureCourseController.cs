@@ -31,12 +31,12 @@ namespace SMS_Form.Controller
                         while (reader.Read())
                         {
                             var lc = new Model.LectureCourse();
-
                             lc.LecturerId = reader.GetInt32(0);
-                            lc.LecturerName = reader.GetString(1);
+                            lc.LecturerName = reader.IsDBNull(1) ? "" : reader.GetString(1);
 
                             lc.CourseId = reader.GetInt32(2);
-                            lc.CourseName =reader.GetString(3);
+                            lc.CourseName = reader.IsDBNull(3) ? "" : reader.GetString(3);
+
 
                             lectureCourses.Add(lc);
                         }
@@ -105,8 +105,9 @@ namespace SMS_Form.Controller
                         LectureCourse lectureCourse = new LectureCourse();
                         lectureCourse.LecturerId = reader.GetInt32(0);
                         lectureCourse.CourseId = reader.GetInt32(1);
-                        lectureCourse.LecturerName = reader.GetString(2); // assuming not null
-                        lectureCourse.CourseName = reader.GetString(3);   // assuming not null
+
+                        lectureCourse.LecturerName = reader.IsDBNull(2) ? "" : reader.GetString(2);
+                        lectureCourse.CourseName = reader.IsDBNull(3) ? "" : reader.GetString(3);
                         return lectureCourse;
                     }
                 }
@@ -149,14 +150,27 @@ namespace SMS_Form.Controller
                     cmd.Parameters.AddWithValue("@oldLecturerId", oldLecturerId);
                     cmd.Parameters.AddWithValue("@oldCourseId", oldCourseId);
 
-                    int rows = cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
 
-                    return rows > 0
-                        ? "Lecturer-course updated successfully."
-                        : "Update failed. No matching record found.";
+                    return "Lecturer-course updated successfully.";
+                   
+
+
                 }
             }
         }
+
+        public void DeleteLectureCourse(int lecturerId, int courseId)
+        {
+            using (var conn = DbConfig.GetConnection())
+            {
+                var command = new SQLiteCommand("DELETE FROM LecturerCourse WHERE LecturerId = @LecturerId AND CourseId = @CourseId", conn);
+                command.Parameters.AddWithValue("@LecturerId", lecturerId);
+                command.Parameters.AddWithValue("@CourseId", courseId);
+                command.ExecuteNonQuery();
+            }
+        }
+
 
     }
 }
