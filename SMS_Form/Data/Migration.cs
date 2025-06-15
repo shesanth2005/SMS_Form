@@ -96,6 +96,14 @@ namespace SMS_Form.Data
         SubjectId INTEGER NOT NULL,
         FOREIGN KEY (SubjectId) REFERENCES Subjects(Id)
     );
+    CREATE TABLE IF NOT EXISTS Marks (
+        Id INTEGER PRIMARY KEY AUTOINCREMENT,
+        StudentId INTEGER NOT NULL,
+        ExamId INTEGER NOT NULL,
+        Marks INTEGER NOT NULL,
+        FOREIGN KEY (StudentId) REFERENCES Students(Id),
+        FOREIGN KEY (ExamId) REFERENCES Exams(Id)
+    );
         
 
 ";

@@ -70,5 +70,11 @@ namespace SMS_Form
             Exam exam = new Exam();
             exam.ShowDialog();
         }
+
+        private void btn_marks_Click(object sender, EventArgs e)
+        {
+            Marks marks = new Marks();
+            marks.ShowDialog();
+        }
     }
 }
