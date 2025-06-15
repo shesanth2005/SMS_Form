@@ -79,17 +79,24 @@ namespace SMS_Form.Data
         CourseId INTEGER NOT NULL,
         FOREIGN KEY (CourseId) REFERENCES Courses(Id)
     );
-CREATE TABLE IF NOT EXISTS Timetable (
-    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-    SubjectId INTEGER NOT NULL,
-    Day TEXT NOT NULL,
-    StartTime TEXT NOT NULL,
-    EndTime TEXT NOT NULL,
-    RoomId INTEGER NOT NULL,
-    FOREIGN KEY (SubjectId) REFERENCES Subjects(Id),
-    FOREIGN KEY (RoomId) REFERENCES Rooms(Id)
-);
-
+    CREATE TABLE IF NOT EXISTS Timetable (
+        Id INTEGER PRIMARY KEY AUTOINCREMENT,
+        SubjectId INTEGER NOT NULL,
+        Day TEXT NOT NULL,
+        StartTime TEXT NOT NULL,
+        EndTime TEXT NOT NULL,
+        RoomId INTEGER NOT NULL,
+        FOREIGN KEY (SubjectId) REFERENCES Subjects(Id),
+        FOREIGN KEY (RoomId) REFERENCES Rooms(Id)
+   
+    );
+    CREATE TABLE IF NOT EXISTS Exams (
+        Id INTEGER PRIMARY KEY AUTOINCREMENT,
+        Name TEXT NOT NULL,
+        SubjectId INTEGER NOT NULL,
+        FOREIGN KEY (SubjectId) REFERENCES Subjects(Id)
+    );
+        
 
 ";
 

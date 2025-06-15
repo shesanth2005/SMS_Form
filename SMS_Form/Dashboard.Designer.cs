@@ -39,6 +39,7 @@
             this.panelLecturerSubmenu = new System.Windows.Forms.Panel();
             this.btn_lec_course = new System.Windows.Forms.Button();
             this.btn_timetable = new System.Windows.Forms.Button();
+            this.btn_exam = new System.Windows.Forms.Button();
             this.mainMenuPanel.SuspendLayout();
             this.panelLecturerSubmenu.SuspendLayout();
             this.SuspendLayout();
@@ -125,6 +126,7 @@
             this.mainMenuPanel.Controls.Add(this.btn_subject);
             this.mainMenuPanel.Controls.Add(this.btn_timetable);
             this.mainMenuPanel.Controls.Add(this.btn_course);
+            this.mainMenuPanel.Controls.Add(this.btn_exam);
             this.mainMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.mainMenuPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.mainMenuPanel.Location = new System.Drawing.Point(0, 0);
@@ -168,6 +170,16 @@
             this.btn_timetable.UseVisualStyleBackColor = true;
             this.btn_timetable.Click += new System.EventHandler(this.btn_timetable_Click);
             // 
+            // btn_exam
+            // 
+            this.btn_exam.Location = new System.Drawing.Point(3, 433);
+            this.btn_exam.Name = "btn_exam";
+            this.btn_exam.Size = new System.Drawing.Size(204, 52);
+            this.btn_exam.TabIndex = 9;
+            this.btn_exam.Text = "Exam";
+            this.btn_exam.UseVisualStyleBackColor = true;
+            this.btn_exam.Click += new System.EventHandler(this.btn_exam_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,5 +208,6 @@
         private System.Windows.Forms.Button btn_lec_course;
         private System.Windows.Forms.Panel panelLecturerSubmenu;
         private System.Windows.Forms.Button btn_timetable;
+        private System.Windows.Forms.Button btn_exam;
     }
 }

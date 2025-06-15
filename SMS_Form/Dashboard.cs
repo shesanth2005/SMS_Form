@@ -64,5 +64,11 @@ namespace SMS_Form
              TimeTable timeTable = new TimeTable();
              timeTable.ShowDialog();    
         }
+
+        private void btn_exam_Click(object sender, EventArgs e)
+        {
+            Exam exam = new Exam();
+            exam.ShowDialog();
+        }
     }
 }
