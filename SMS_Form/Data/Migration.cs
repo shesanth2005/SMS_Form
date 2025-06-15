@@ -104,6 +104,12 @@ namespace SMS_Form.Data
         FOREIGN KEY (StudentId) REFERENCES Students(Id),
         FOREIGN KEY (ExamId) REFERENCES Exams(Id)
     );
+    CREATE TABLE IF NOT EXISTS Staffs (
+        Id INTEGER PRIMARY KEY AUTOINCREMENT,
+        Name TEXT NOT NULL,
+        UserId INTEGER NOT NULL,
+        FOREIGN KEY (UserId) REFERENCES Users(UserID)
+    );
         
 
 ";

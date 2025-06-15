@@ -51,17 +51,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountStaffcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountStaffcs.Designer.cs">
+      <DependentUpon>AccountStaffcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddLecturerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddLecturerForm.Designer.cs">
       <DependentUpon>AddLecturerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddStaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStaffForm.Designer.cs">
+      <DependentUpon>AddStaffForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller\CourseController.cs" />
     <Compile Include="Controller\ExamController.cs" />
     <Compile Include="Controller\LectureCourseController.cs" />
     <Compile Include="Controller\MarkController.cs" />
     <Compile Include="Controller\RoomController.cs" />
+    <Compile Include="Controller\StaffController.cs" />
     <Compile Include="Controller\StudentController.cs" />
     <Compile Include="Controller\SubjectController.cs" />
     <Compile Include="Controller\LecturerController.cs" />
@@ -116,6 +129,7 @@
     <Compile Include="Model\LectureCourse.cs" />
     <Compile Include="Model\Mark.cs" />
     <Compile Include="Model\Room.cs" />
+    <Compile Include="Model\Staff.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\Subject.cs" />
     <Compile Include="Model\Lecturer.cs" />
@@ -126,6 +140,12 @@
     </Compile>
     <Compile Include="RoomForm.Designer.cs">
       <DependentUpon>RoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staffs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staffs.Designer.cs">
+      <DependentUpon>Staffs.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentAccount.cs">
       <SubType>Form</SubType>
@@ -160,6 +180,9 @@
     <Compile Include="TimeTable.Designer.cs">
       <DependentUpon>TimeTable.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AccountStaffcs.resx">
+      <DependentUpon>AccountStaffcs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddLecturerForm.resx">
       <DependentUpon>AddLecturerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RoomForm.resx">
       <DependentUpon>RoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staffs.resx">
+      <DependentUpon>Staffs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentAccount.resx">
       <DependentUpon>StudentAccount.cs</DependentUpon>
