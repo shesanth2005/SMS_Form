@@ -9,7 +9,8 @@ namespace SMS_Form.Data
 {
     internal static class DbConfig
     {
-        private static string connectionString = "Data Source=SchoolDB.db;Version=3;";
+        private static string connectionString = "Data Source=SchoolDB.db;Version=3;Pooling=True;Max Pool Size=100;BusyTimeout=5000;";
+
 
         public static SQLiteConnection GetConnection()
         {

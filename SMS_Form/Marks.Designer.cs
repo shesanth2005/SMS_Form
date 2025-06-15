@@ -32,9 +32,9 @@
             this.txt_marks = new System.Windows.Forms.TextBox();
             this.dgv_marks = new System.Windows.Forms.DataGridView();
             this.btn_add = new System.Windows.Forms.Button();
-            this.btn_update = new System.Windows.Forms.Button();
-            this.btn_delete = new System.Windows.Forms.Button();
             this.cmb_student = new System.Windows.Forms.ComboBox();
+            this.btn_update_mark = new System.Windows.Forms.Button();
+            this.btn_delete_marks = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_marks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,26 +74,6 @@
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
-            // btn_update
-            // 
-            this.btn_update.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.Location = new System.Drawing.Point(330, 131);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(75, 23);
-            this.btn_update.TabIndex = 5;
-            this.btn_update.Text = "Update";
-            this.btn_update.UseVisualStyleBackColor = true;
-            // 
-            // btn_delete
-            // 
-            this.btn_delete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_delete.Location = new System.Drawing.Point(191, 131);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(75, 23);
-            this.btn_delete.TabIndex = 6;
-            this.btn_delete.Text = "Delete";
-            this.btn_delete.UseVisualStyleBackColor = true;
-            // 
             // cmb_student
             // 
             this.cmb_student.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -103,14 +83,36 @@
             this.cmb_student.Size = new System.Drawing.Size(121, 25);
             this.cmb_student.TabIndex = 7;
             // 
+            // btn_update_mark
+            // 
+            this.btn_update_mark.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update_mark.Location = new System.Drawing.Point(344, 131);
+            this.btn_update_mark.Name = "btn_update_mark";
+            this.btn_update_mark.Size = new System.Drawing.Size(75, 23);
+            this.btn_update_mark.TabIndex = 8;
+            this.btn_update_mark.Text = "Update";
+            this.btn_update_mark.UseVisualStyleBackColor = true;
+            this.btn_update_mark.Click += new System.EventHandler(this.btn_update_mark_Click);
+            // 
+            // btn_delete_marks
+            // 
+            this.btn_delete_marks.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete_marks.Location = new System.Drawing.Point(191, 140);
+            this.btn_delete_marks.Name = "btn_delete_marks";
+            this.btn_delete_marks.Size = new System.Drawing.Size(75, 23);
+            this.btn_delete_marks.TabIndex = 9;
+            this.btn_delete_marks.Text = "Delete";
+            this.btn_delete_marks.UseVisualStyleBackColor = true;
+            this.btn_delete_marks.Click += new System.EventHandler(this.btn_delete_marks_Click);
+            // 
             // Marks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_delete_marks);
+            this.Controls.Add(this.btn_update_mark);
             this.Controls.Add(this.cmb_student);
-            this.Controls.Add(this.btn_delete);
-            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.dgv_marks);
             this.Controls.Add(this.txt_marks);
@@ -129,8 +131,8 @@
         private System.Windows.Forms.TextBox txt_marks;
         private System.Windows.Forms.DataGridView dgv_marks;
         private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.Button btn_update;
-        private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.ComboBox cmb_student;
+        private System.Windows.Forms.Button btn_update_mark;
+        private System.Windows.Forms.Button btn_delete_marks;
     }
 }

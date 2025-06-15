@@ -42,7 +42,10 @@ namespace SMS_Form
                 MessageBox.Show("Please enter marks.");
                 return;
             }
-            markcheck(); // Check if marks are valid before adding
+            if (!markcheck())
+            {
+                return; // Stop if validation failed
+            }
             Model.Mark mark = new Model.Mark();
             mark.StudentId = Convert.ToInt32(cmb_student.SelectedValue);
             mark.ExamId = Convert.ToInt32(cmb_exam.SelectedValue);
@@ -127,7 +130,34 @@ namespace SMS_Form
         }
 
 
-        private void btn_update_Click(object sender, EventArgs e)
+
+
+        private bool markcheck()
+        {
+            int mar;
+            if (!int.TryParse(txt_marks.Text.Trim(), out mar))
+            {
+                MessageBox.Show("Please enter a valid numeric value for marks.");
+                txt_marks.Clear();
+                txt_marks.Focus();
+                return false;
+            }
+
+            if (mar < 0 || mar > 100)
+            {
+                MessageBox.Show("Marks must be between 0 and 100.");
+                txt_marks.Clear();
+                txt_marks.Focus();
+                return false;
+            }
+
+            return true;  // Valid marks
+        }
+
+
+
+
+        private void btn_update_mark_Click(object sender, EventArgs e)
         {
             if (selectedMarkId == -1)
             {
@@ -149,12 +179,15 @@ namespace SMS_Form
                 MessageBox.Show("Please enter marks.");
                 return;
             }
-            markcheck(); // Check if marks are valid before updating
+            if (!markcheck())
+            {
+                return; // Stop if validation failed
+            }
             Model.Mark mark = new Model.Mark();
             mark.Id = selectedMarkId; // Use the selected mark ID for updating
             mark.StudentId = Convert.ToInt32(cmb_student.SelectedValue);
             mark.ExamId = Convert.ToInt32(cmb_exam.SelectedValue);
-            mark.Marks = Convert.ToInt32(txt_marks.Text);
+            mark.Marks = int.Parse(txt_marks.Text);
             Controller.MarkController markController = new Controller.MarkController();
             string result = markController.UpdateMark(mark);
             MessageBox.Show(result);
@@ -162,19 +195,7 @@ namespace SMS_Form
             clearFields(); // Clear fields after updating a mark
         }
 
-        private void markcheck()
-        {
-            int mar = Convert.ToInt32(txt_marks.Text);
-            if (mar < 0 || mar > 100)
-            {
-                MessageBox.Show("Marks must be between 0 and 100.");
-                txt_marks.Clear();
-                txt_marks.Focus();
-                return;
-            }
-        }
-
-        private void btn_delete_Click(object sender, EventArgs e)
+        private void btn_delete_marks_Click(object sender, EventArgs e)
         {
             if (selectedMarkId == -1)
             {

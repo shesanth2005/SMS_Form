@@ -74,7 +74,7 @@ namespace SMS_Form.Controller
                         mark.Id = readers.GetInt32(0);
                         mark.StudentId = readers.GetInt32(1);
                         mark.ExamId = readers.GetInt32(2);
-                        mark.Marks = readers.GetDouble(3);
+                        mark.Marks = readers.GetInt32(3);
                         mark.StudentName = readers.GetString(4);
                         mark.ExamName = readers.GetString(5);
                         marks.Add(mark);
@@ -136,7 +136,7 @@ namespace SMS_Form.Controller
                         mark.Id = reader.GetInt32(0);
                         mark.StudentId = reader.GetInt32(1);
                         mark.ExamId = reader.GetInt32(2);
-                        mark.Marks = reader.GetDouble(3);
+                        mark.Marks = reader.GetInt32(3);
                         mark.StudentName = reader.GetString(4);
                         mark.ExamName = reader.GetString(5);
                     }
