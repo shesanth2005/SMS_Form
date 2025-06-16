@@ -14,9 +14,10 @@ namespace SMS_Form.Controller
         {
             using (var conn = DbConfig.GetConnection())
             {
-                var cmd = new System.Data.SQLite.SQLiteCommand("INSERT INTO Staff (Name) VALUES (@Name)", conn);
+                var cmd = new System.Data.SQLite.SQLiteCommand("INSERT INTO Staffs (Name,StaffRole,UserId) VALUES (@Name,@StaffRole,@UserId)" , conn);
                 cmd.Parameters.AddWithValue("@Name", staff.Name);
-               
+                cmd.Parameters.AddWithValue("@StaffRole", staff.StaffRole); // Assuming StaffRole is a property of Staff
+                cmd.Parameters.AddWithValue("@UserId", staff.UserId);
                 cmd.ExecuteNonQuery();
                 return "Staff Added Successfully";
             }
@@ -27,7 +28,7 @@ namespace SMS_Form.Controller
         {
             using (var conn = DbConfig.GetConnection())
             {
-                var cmd = new System.Data.SQLite.SQLiteCommand("DELETE FROM Staff WHERE Id = @Id", conn);
+                var cmd = new System.Data.SQLite.SQLiteCommand("DELETE FROM Staffs WHERE Id = @Id", conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 cmd.ExecuteNonQuery();
                 return "Staff Deleted Successfully";
@@ -38,7 +39,7 @@ namespace SMS_Form.Controller
         {
             using (var conn = DbConfig.GetConnection())
             {
-                var cmd = new System.Data.SQLite.SQLiteCommand("SELECT * FROM Staff WHERE Id = @Id", conn);
+                var cmd = new System.Data.SQLite.SQLiteCommand("SELECT * FROM Staffs WHERE Id = @Id", conn);
                 cmd.Parameters.AddWithValue("@Id", id);
                 var reader = cmd.ExecuteReader();
                 if (reader.Read())
@@ -47,7 +48,8 @@ namespace SMS_Form.Controller
                     {
                         Id = reader.GetInt32(0),
                         Name = reader.GetString(1),
-                        UserId = reader.GetInt32(2)
+                        StaffRole = reader.GetString(2), // Assuming StaffRole is the same as Name for this example
+                        UserId = reader.GetInt32(3)
                     };
                     return staff;
                 }
@@ -62,7 +64,7 @@ namespace SMS_Form.Controller
             List<Staff> staffList = new List<Staff>();
             using (var conn = DbConfig.GetConnection())
             {
-                var cmd = new System.Data.SQLite.SQLiteCommand("SELECT * FROM Staff", conn);
+                var cmd = new System.Data.SQLite.SQLiteCommand("SELECT * FROM Staffs", conn);
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -70,7 +72,8 @@ namespace SMS_Form.Controller
                     {
                         Id = reader.GetInt32(0),
                         Name = reader.GetString(1),
-                        UserId = reader.GetInt32(2)
+                        StaffRole = reader.GetString(2), // Assuming StaffRole is the same as Name for this example
+                        UserId = reader.GetInt32(3)
                     };
                     staffList.Add(staff);
                 }
@@ -82,10 +85,12 @@ namespace SMS_Form.Controller
         {
             using (var conn = DbConfig.GetConnection())
             {
-                var cmd = new System.Data.SQLite.SQLiteCommand("UPDATE Staff SET Name = @Name WHERE Id = @Id", conn);
+                var cmd = new System.Data.SQLite.SQLiteCommand("UPDATE Staffs SET Name = @Name,StaffRole=@StaffRole,UserId=@UserId WHERE Id = @Id", conn);
                 cmd.Parameters.AddWithValue("@Name", staff.Name);
-             
+                
                 cmd.Parameters.AddWithValue("@Id", staff.Id);
+                cmd.Parameters.AddWithValue("@UserId", staff.UserId);
+                cmd.Parameters.AddWithValue("@StaffRole", staff.StaffRole); // Assuming StaffRole is a property of Staff
                 cmd.ExecuteNonQuery();
                 return "Staff Updated Successfully";
             }

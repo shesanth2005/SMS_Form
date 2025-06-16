@@ -39,8 +39,9 @@
             this.panelLecturerSubmenu = new System.Windows.Forms.Panel();
             this.btn_lec_course = new System.Windows.Forms.Button();
             this.btn_timetable = new System.Windows.Forms.Button();
-            this.btn_exam = new System.Windows.Forms.Button();
             this.btn_marks = new System.Windows.Forms.Button();
+            this.btn_exam = new System.Windows.Forms.Button();
+            this.btn_staff = new System.Windows.Forms.Button();
             this.mainMenuPanel.SuspendLayout();
             this.panelLecturerSubmenu.SuspendLayout();
             this.SuspendLayout();
@@ -172,16 +173,6 @@
             this.btn_timetable.UseVisualStyleBackColor = true;
             this.btn_timetable.Click += new System.EventHandler(this.btn_timetable_Click);
             // 
-            // btn_exam
-            // 
-            this.btn_exam.Location = new System.Drawing.Point(3, 462);
-            this.btn_exam.Name = "btn_exam";
-            this.btn_exam.Size = new System.Drawing.Size(204, 52);
-            this.btn_exam.TabIndex = 9;
-            this.btn_exam.Text = "Exam";
-            this.btn_exam.UseVisualStyleBackColor = true;
-            this.btn_exam.Click += new System.EventHandler(this.btn_exam_Click);
-            // 
             // btn_marks
             // 
             this.btn_marks.Location = new System.Drawing.Point(3, 433);
@@ -192,12 +183,33 @@
             this.btn_marks.UseVisualStyleBackColor = true;
             this.btn_marks.Click += new System.EventHandler(this.btn_marks_Click);
             // 
+            // btn_exam
+            // 
+            this.btn_exam.Location = new System.Drawing.Point(3, 462);
+            this.btn_exam.Name = "btn_exam";
+            this.btn_exam.Size = new System.Drawing.Size(204, 52);
+            this.btn_exam.TabIndex = 9;
+            this.btn_exam.Text = "Exam";
+            this.btn_exam.UseVisualStyleBackColor = true;
+            this.btn_exam.Click += new System.EventHandler(this.btn_exam_Click);
+            // 
+            // btn_staff
+            // 
+            this.btn_staff.Location = new System.Drawing.Point(337, 237);
+            this.btn_staff.Name = "btn_staff";
+            this.btn_staff.Size = new System.Drawing.Size(216, 61);
+            this.btn_staff.TabIndex = 11;
+            this.btn_staff.Text = "Manage Staff";
+            this.btn_staff.UseVisualStyleBackColor = true;
+            this.btn_staff.Click += new System.EventHandler(this.btn_staff_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(770, 465);
             this.Controls.Add(this.mainMenuPanel);
+            this.Controls.Add(this.btn_staff);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -222,5 +234,6 @@
         private System.Windows.Forms.Button btn_timetable;
         private System.Windows.Forms.Button btn_exam;
         private System.Windows.Forms.Button btn_marks;
+        private System.Windows.Forms.Button btn_staff;
     }
 }

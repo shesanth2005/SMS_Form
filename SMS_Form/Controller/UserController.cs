@@ -34,11 +34,16 @@ namespace SMS_Form.Controller
         {
             using (var conn = DbConfig.GetConnection())
             {
-                var command = new SQLiteCommand("DELETE FROM Users WHERE UserId = @Id", conn);
-                command.Parameters.AddWithValue("@Id", userId);
-                command.ExecuteNonQuery();
+                
+
+                using (var command = new SQLiteCommand("DELETE FROM Users WHERE UserId = @Id", conn))
+                {
+                    command.Parameters.AddWithValue("@Id", userId);
+                    command.ExecuteNonQuery();
+                }
             }
         }
+
 
         public bool IsUsernameAvailable(string username)
         {

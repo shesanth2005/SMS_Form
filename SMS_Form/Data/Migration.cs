@@ -107,6 +107,7 @@ namespace SMS_Form.Data
     CREATE TABLE IF NOT EXISTS Staffs (
         Id INTEGER PRIMARY KEY AUTOINCREMENT,
         Name TEXT NOT NULL,
+        StaffRole TEXT NOT NULL,
         UserId INTEGER NOT NULL,
         FOREIGN KEY (UserId) REFERENCES Users(UserID)
     );

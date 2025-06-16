@@ -76,5 +76,11 @@ namespace SMS_Form
             Marks marks = new Marks();
             marks.ShowDialog();
         }
+
+        private void btn_staff_Click(object sender, EventArgs e)
+        {
+            Staffs staffs = new Staffs();
+            staffs.ShowDialog();
+        }
     }
 }
