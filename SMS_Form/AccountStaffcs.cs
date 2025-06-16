@@ -25,6 +25,11 @@ namespace SMS_Form
                 MessageBox.Show("Please enter both Name and Password.");
                 return;
             }
+            if (password.Text.Length<8)
+            { 
+                MessageBox.Show("Password must be at least 8 characters long.");
+                return;
+            }
             UserController userController = new UserController();
             if (userController.IsUsernameAvailable(name.Text))
             {
