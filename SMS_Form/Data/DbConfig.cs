@@ -12,12 +12,25 @@ namespace SMS_Form.Data
         private static string connectionString = "Data Source=SchoolDB.db;Version=3;Pooling=True;Max Pool Size=100;BusyTimeout=5000;";
 
 
+        //public static SQLiteConnection GetConnection()
+        //{
+        //    SQLiteConnection conn = new SQLiteConnection(connectionString);
+        //    conn.Open();
+        //    return conn;
+
+        //}
+
         public static SQLiteConnection GetConnection()
         {
-            SQLiteConnection conn = new SQLiteConnection(connectionString);
+            var conn = new SQLiteConnection(connectionString);
             conn.Open();
-            return conn;
 
+            using (var cmd = new SQLiteCommand("PRAGMA foreign_keys = ON;", conn))
+            {
+                cmd.ExecuteNonQuery();
+            }
+
+            return conn;
         }
 
     }
