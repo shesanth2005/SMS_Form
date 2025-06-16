@@ -84,6 +84,13 @@ namespace SMS_Form
                 MessageBox.Show("Please enter Name, Address, and Telephone.");
                 return;
             }
+            if (!long.TryParse(telephone.Text, out long num))
+            {
+                MessageBox.Show("Please enter a valid telephone number.");
+                return;
+            }
+
+
 
             var lecturer = new Lecturer
             {
