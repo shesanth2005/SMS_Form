@@ -118,31 +118,7 @@ namespace SMS_Form.Controller
 
         }
 
-        public User Getuserbyusernsme(string username)
-        {
-            using (var conn = DbConfig.GetConnection())
-            {
-                string query = "SELECT UserId, UserName, Password, Role FROM Users WHERE UserName = @Username";
-                using (var cmd = new SQLiteCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@Username", username);
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            return new User
-                            {
-                                Id = reader.GetInt32(0),
-                                Name = reader.GetString(1),
-                                Password = reader.GetString(2),
-                                Role = reader.GetString(3)
-                            };
-                        }
-                    }
-                }
-            }
-            return null; // Return null if no user found with the given username
-        }
+       
 
         public string UpdateUser(User user)
         {
@@ -160,5 +136,34 @@ namespace SMS_Form.Controller
             }
             return "User Updated Successfully";
         }
+
+        public List<User> GetAdmins()
+        {
+            var admins = new List<User>();
+            using (var conn = DbConfig.GetConnection())
+            {
+                string query = "SELECT UserId, UserName, Password, Role FROM Users WHERE Role = @Role";
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Role", "Admin");
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            admins.Add(new User
+                            {
+                                Id = reader.GetInt32(0),
+                                Name = reader.GetString(1),
+                                Password = reader.GetString(2),
+                                Role = reader.GetString(3)
+                            });
+                        }
+                    }
+                }
+            }
+            return admins;
+        }
+
     }
 }

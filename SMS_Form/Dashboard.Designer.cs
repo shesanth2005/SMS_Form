@@ -43,6 +43,7 @@
             this.btn_exam = new System.Windows.Forms.Button();
             this.btn_staff = new System.Windows.Forms.Button();
             this.btn_user = new System.Windows.Forms.Button();
+            this.btn_admin = new System.Windows.Forms.Button();
             this.mainMenuPanel.SuspendLayout();
             this.panelLecturerSubmenu.SuspendLayout();
             this.SuspendLayout();
@@ -214,11 +215,22 @@
             this.btn_user.UseVisualStyleBackColor = true;
             this.btn_user.Click += new System.EventHandler(this.btn_user_Click);
             // 
+            // btn_admin
+            // 
+            this.btn_admin.Location = new System.Drawing.Point(302, 332);
+            this.btn_admin.Name = "btn_admin";
+            this.btn_admin.Size = new System.Drawing.Size(216, 61);
+            this.btn_admin.TabIndex = 13;
+            this.btn_admin.Text = "Manage Admin";
+            this.btn_admin.UseVisualStyleBackColor = true;
+            this.btn_admin.Click += new System.EventHandler(this.btn_admin_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(770, 465);
+            this.Controls.Add(this.btn_admin);
             this.Controls.Add(this.btn_user);
             this.Controls.Add(this.mainMenuPanel);
             this.Controls.Add(this.btn_staff);
@@ -248,5 +260,6 @@
         private System.Windows.Forms.Button btn_marks;
         private System.Windows.Forms.Button btn_staff;
         private System.Windows.Forms.Button btn_user;
+        private System.Windows.Forms.Button btn_admin;
     }
 }

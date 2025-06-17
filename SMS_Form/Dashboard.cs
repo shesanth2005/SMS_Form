@@ -88,5 +88,11 @@ namespace SMS_Form
             Users users = new Users();
             users.ShowDialog();
         }
+
+        private void btn_admin_Click(object sender, EventArgs e)
+        {
+            Admins admins = new Admins();
+            admins.ShowDialog();
+        }
     }
 }
