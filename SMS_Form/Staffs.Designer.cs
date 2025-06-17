@@ -34,6 +34,7 @@
             this.btn_update = new System.Windows.Forms.Button();
             this.role_comboBox = new System.Windows.Forms.ComboBox();
             this.del_btn = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_staff)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,5 +123,6 @@
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.ComboBox role_comboBox;
         private System.Windows.Forms.Button del_btn;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

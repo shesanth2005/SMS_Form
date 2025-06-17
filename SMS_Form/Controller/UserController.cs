@@ -62,5 +62,60 @@ namespace SMS_Form.Controller
                 return result == null;
             }
         }
+
+        public List<User> GetAllUsers() 
+        {
+            List<User> users = new List<User>();
+            using (var conn = DbConfig.GetConnection())
+            {
+                string query = "SELECT UserId, UserName, Password, Role FROM Users";
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            User user = new User
+                            {
+                                Id = reader.GetInt32(0),
+                                Name = reader.GetString(1),
+                                Password = reader.GetString(2),
+                                Role = reader.GetString(3)
+                            };
+                            users.Add(user);
+                        }
+                    }
+                }
+            }
+            return users;
+        }
+
+        public User GetuserbyID(int id)
+        {
+            using (var conn = DbConfig.GetConnection())
+            {
+                string query = "SELECT UserId, UserName, Password, Role FROM Users WHERE UserId = @Id";
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new User
+                            {
+                                Id = reader.GetInt32(0),
+                                Name = reader.GetString(1),
+                                Password = reader.GetString(2),
+                                Role = reader.GetString(3)
+                            };
+                        }
+                    
+                    }
+                }
+            }
+            return null; // Return null if no user found with the given ID
+
+        }
     }
 }

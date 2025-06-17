@@ -180,6 +180,12 @@
     <Compile Include="TimeTable.Designer.cs">
       <DependentUpon>TimeTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AccountStaffcs.resx">
       <DependentUpon>AccountStaffcs.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TimeTable.resx">
       <DependentUpon>TimeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".vs\SMS_Form.csproj.dtbcache.json" />
     <None Include="bin\Debug\SchoolDB.db" />

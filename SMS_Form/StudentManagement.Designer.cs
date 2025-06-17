@@ -49,7 +49,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(75, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -62,6 +64,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(75, 65);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -74,6 +77,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(75, 100);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -84,14 +88,13 @@
             // 
             // name
             // 
-            this.name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name.BackColor = System.Drawing.Color.White;
             this.name.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name.ForeColor = System.Drawing.Color.White;
             this.name.Location = new System.Drawing.Point(142, 27);
             this.name.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(230, 18);
+            this.name.Size = new System.Drawing.Size(230, 25);
             this.name.TabIndex = 3;
             // 
             // address
@@ -115,14 +118,16 @@
             // 
             // btn_update
             // 
+            this.btn_update.BackColor = System.Drawing.Color.White;
             this.btn_update.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update.ForeColor = System.Drawing.Color.Black;
             this.btn_update.Location = new System.Drawing.Point(20, 170);
             this.btn_update.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(124, 25);
             this.btn_update.TabIndex = 6;
             this.btn_update.Text = "Update Selected";
-            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.UseVisualStyleBackColor = false;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_delete
@@ -162,7 +167,7 @@
             // 
             // student_groupBox
             // 
-            this.student_groupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.student_groupBox.BackColor = System.Drawing.Color.Transparent;
             this.student_groupBox.Controls.Add(this.label1);
             this.student_groupBox.Controls.Add(this.name);
             this.student_groupBox.Controls.Add(this.label2);
@@ -170,7 +175,7 @@
             this.student_groupBox.Controls.Add(this.course_comboBox_main);
             this.student_groupBox.Controls.Add(this.label3);
             this.student_groupBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.student_groupBox.ForeColor = System.Drawing.Color.White;
+            this.student_groupBox.ForeColor = System.Drawing.Color.Black;
             this.student_groupBox.Location = new System.Drawing.Point(20, 20);
             this.student_groupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.student_groupBox.Name = "student_groupBox";
@@ -194,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(496, 542);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.StudentView);
@@ -203,7 +208,7 @@
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.student_groupBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "StudentManagement";
