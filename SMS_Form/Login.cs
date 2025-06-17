@@ -59,8 +59,12 @@ namespace SMS_Form
                         //}
                         Dashboard dashboardForm = new Dashboard();
                         dashboardForm.Role = user.Role; // Set the role for the dashboard
-                        dashboardForm.Show();
-                        this.Close(); // Hide the login form
+                        
+
+
+                        this.Hide(); // Just hide LoginForm
+                        dashboardForm.ShowDialog(); // Show Dashboard as modal
+                        this.Close(); 
                     }
                     else
                     {
