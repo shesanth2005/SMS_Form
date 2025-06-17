@@ -12,6 +12,7 @@ namespace SMS_Form
 {
     public partial class Dashboard : Form
     {
+        public string Role { get; set; } // Property to hold the role of the user
         public Dashboard()
         {
             InitializeComponent();

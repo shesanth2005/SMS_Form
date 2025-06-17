@@ -118,7 +118,7 @@ namespace SMS_Form.Controller
 
         }
 
-       
+
 
         public string UpdateUser(User user)
         {
@@ -165,5 +165,39 @@ namespace SMS_Form.Controller
             return admins;
         }
 
+        public bool CheckUserName(string username)
+        {
+            using (var conn = DbConfig.GetConnection())
+            {
+                var command = new SQLiteCommand("SELECT COUNT(*) FROM Users WHERE UserName = @UserName", conn);
+                command.Parameters.AddWithValue("@UserName", username);
+                long count = (long)command.ExecuteScalar();
+                return count > 0; // Returns true if username exists, false otherwise
+            }
+
+        }
+
+        public User GetUserByUsername(string username)
+        {
+            using (var conn = DbConfig.GetConnection())
+            {
+                var command = new SQLiteCommand("SELECT UserId, UserName, Password, Role FROM Users WHERE UserName = @UserName", conn);
+                command.Parameters.AddWithValue("@UserName", username);
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new User
+                        {
+                            Id = reader.GetInt32(0),
+                            Name = reader.GetString(1),
+                            Password = reader.GetString(2),
+                            Role = reader.GetString(3)
+                        };
+                    }
+                }
+            }
+            return null; // Return null if no user found with the given username
+        }
     }
 }
