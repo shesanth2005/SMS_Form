@@ -20,7 +20,9 @@ namespace SMS_Form
             userRole = role;
             userId = uid;
 
+
             InitializeComponent();
+         
 
             if (userRole == "Student")
             { 
@@ -33,29 +35,41 @@ namespace SMS_Form
               btn_user.Visible = false;
             }
         }
+        private void LoadFormInPanel(Form form)
+        {
+            mainPanel.Controls.Clear();  // Clear existing controls
+
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+
+            mainPanel.Controls.Add(form);
+            form.Show();
+        }
+
 
         private void btn_student_Click(object sender, EventArgs e)
         {
             StudentManagement studentManagement = new StudentManagement();
-            studentManagement.ShowDialog();
+            LoadFormInPanel(studentManagement);
         }
 
         private void btn_course_Click(object sender, EventArgs e)
         {
             CourseForm courseForm = new CourseForm();
-            courseForm.ShowDialog();    
+            LoadFormInPanel(courseForm);
         }
 
         private void btn_subject_Click(object sender, EventArgs e)
         {
             SubjectForm subjectForm = new SubjectForm();
-            subjectForm.ShowDialog();
+            LoadFormInPanel(subjectForm);
         }
 
         private void btn_room_Click(object sender, EventArgs e)
         {
             RoomForm roomForm = new RoomForm();
-            roomForm.ShowDialog();  
+            LoadFormInPanel(roomForm);  
         }
 
         private void btn_lecturer_Click(object sender, EventArgs e)
@@ -67,49 +81,49 @@ namespace SMS_Form
         private void btn_lec_dtail_Click(object sender, EventArgs e)
         {
             TeacherManagement teacherManagement = new TeacherManagement();
-            teacherManagement.ShowDialog();
+            LoadFormInPanel(teacherManagement);
         }
 
         private void btn_lec_course_Click(object sender, EventArgs e)
         {
             LecturersCourses lecturersCourses = new LecturersCourses();
-            lecturersCourses.ShowDialog();
+            LoadFormInPanel(lecturersCourses);
         }
 
         private void btn_timetable_Click(object sender, EventArgs e)
         {
              TimeTable timeTable = new TimeTable();
-             timeTable.ShowDialog();    
+             LoadFormInPanel(timeTable);    
         }
 
         private void btn_exam_Click(object sender, EventArgs e)
         {
             Exam exam = new Exam();
-            exam.ShowDialog();
+            LoadFormInPanel(exam);
         }
 
         private void btn_marks_Click(object sender, EventArgs e)
         {
             Marks marks = new Marks();
-            marks.ShowDialog();
+            LoadFormInPanel(marks);
         }
 
         private void btn_staff_Click(object sender, EventArgs e)
         {
             Staffs staffs = new Staffs();
-            staffs.ShowDialog();
+            LoadFormInPanel(staffs);
         }
 
         private void btn_user_Click(object sender, EventArgs e)
         {
             Users users = new Users();
-            users.ShowDialog();
+            LoadFormInPanel(users);
         }
 
         private void btn_admin_Click(object sender, EventArgs e)
         {
             Admins admins = new Admins();
-            admins.ShowDialog();
+            LoadFormInPanel(admins);
         }
 
         

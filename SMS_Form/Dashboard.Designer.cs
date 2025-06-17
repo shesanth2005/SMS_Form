@@ -41,15 +41,21 @@
             this.btn_timetable = new System.Windows.Forms.Button();
             this.btn_marks = new System.Windows.Forms.Button();
             this.btn_exam = new System.Windows.Forms.Button();
-            this.btn_staff = new System.Windows.Forms.Button();
             this.btn_user = new System.Windows.Forms.Button();
+            this.btn_staff = new System.Windows.Forms.Button();
             this.btn_admin = new System.Windows.Forms.Button();
+            this.TopPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.mainMenuPanel.SuspendLayout();
             this.panelLecturerSubmenu.SuspendLayout();
+            this.TopPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_student
             // 
+            this.btn_student.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btn_student.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.btn_student.FlatAppearance.BorderSize = 0;
             this.btn_student.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -58,7 +64,7 @@
             this.btn_student.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_student.Location = new System.Drawing.Point(3, 3);
             this.btn_student.Name = "btn_student";
-            this.btn_student.Size = new System.Drawing.Size(217, 50);
+            this.btn_student.Size = new System.Drawing.Size(234, 50);
             this.btn_student.TabIndex = 0;
             this.btn_student.Text = "Manage Student";
             this.btn_student.UseVisualStyleBackColor = false;
@@ -68,7 +74,7 @@
             // 
             this.btn_course.Location = new System.Drawing.Point(3, 360);
             this.btn_course.Name = "btn_course";
-            this.btn_course.Size = new System.Drawing.Size(216, 65);
+            this.btn_course.Size = new System.Drawing.Size(234, 65);
             this.btn_course.TabIndex = 1;
             this.btn_course.Text = "Manage Course";
             this.btn_course.UseVisualStyleBackColor = true;
@@ -78,7 +84,7 @@
             // 
             this.btn_subject.Location = new System.Drawing.Point(3, 247);
             this.btn_subject.Name = "btn_subject";
-            this.btn_subject.Size = new System.Drawing.Size(216, 61);
+            this.btn_subject.Size = new System.Drawing.Size(234, 61);
             this.btn_subject.TabIndex = 2;
             this.btn_subject.Text = "Manage Subject";
             this.btn_subject.UseVisualStyleBackColor = true;
@@ -86,12 +92,17 @@
             // 
             // btn_room
             // 
+            this.btn_room.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.btn_room.FlatAppearance.BorderSize = 0;
+            this.btn_room.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_room.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_room.ForeColor = System.Drawing.Color.White;
             this.btn_room.Location = new System.Drawing.Point(3, 187);
             this.btn_room.Name = "btn_room";
-            this.btn_room.Size = new System.Drawing.Size(217, 54);
+            this.btn_room.Size = new System.Drawing.Size(234, 54);
             this.btn_room.TabIndex = 3;
             this.btn_room.Text = "Manage Room";
-            this.btn_room.UseVisualStyleBackColor = true;
+            this.btn_room.UseVisualStyleBackColor = false;
             this.btn_room.Click += new System.EventHandler(this.btn_room_Click);
             // 
             // btn_lecturer
@@ -103,7 +114,7 @@
             this.btn_lecturer.ForeColor = System.Drawing.Color.White;
             this.btn_lecturer.Location = new System.Drawing.Point(3, 59);
             this.btn_lecturer.Name = "btn_lecturer";
-            this.btn_lecturer.Size = new System.Drawing.Size(217, 50);
+            this.btn_lecturer.Size = new System.Drawing.Size(234, 50);
             this.btn_lecturer.TabIndex = 6;
             this.btn_lecturer.Text = "Manage Lecturer";
             this.btn_lecturer.UseVisualStyleBackColor = false;
@@ -118,7 +129,7 @@
             this.btn_lec_dtail.ForeColor = System.Drawing.Color.White;
             this.btn_lec_dtail.Location = new System.Drawing.Point(0, 3);
             this.btn_lec_dtail.Name = "btn_lec_dtail";
-            this.btn_lec_dtail.Size = new System.Drawing.Size(200, 35);
+            this.btn_lec_dtail.Size = new System.Drawing.Size(214, 35);
             this.btn_lec_dtail.TabIndex = 7;
             this.btn_lec_dtail.Text = "- Lecturer Details";
             this.btn_lec_dtail.UseVisualStyleBackColor = false;
@@ -143,9 +154,9 @@
             this.mainMenuPanel.Controls.Add(this.btn_admin);
             this.mainMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.mainMenuPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.mainMenuPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainMenuPanel.Location = new System.Drawing.Point(0, 68);
             this.mainMenuPanel.Name = "mainMenuPanel";
-            this.mainMenuPanel.Size = new System.Drawing.Size(223, 837);
+            this.mainMenuPanel.Size = new System.Drawing.Size(237, 769);
             this.mainMenuPanel.TabIndex = 8;
             this.mainMenuPanel.WrapContents = false;
             // 
@@ -159,7 +170,7 @@
             this.panelLecturerSubmenu.Location = new System.Drawing.Point(20, 112);
             this.panelLecturerSubmenu.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.panelLecturerSubmenu.Name = "panelLecturerSubmenu";
-            this.panelLecturerSubmenu.Size = new System.Drawing.Size(200, 72);
+            this.panelLecturerSubmenu.Size = new System.Drawing.Size(217, 72);
             this.panelLecturerSubmenu.TabIndex = 9;
             this.panelLecturerSubmenu.Visible = false;
             // 
@@ -172,7 +183,7 @@
             this.btn_lec_course.ForeColor = System.Drawing.Color.White;
             this.btn_lec_course.Location = new System.Drawing.Point(0, 34);
             this.btn_lec_course.Name = "btn_lec_course";
-            this.btn_lec_course.Size = new System.Drawing.Size(200, 35);
+            this.btn_lec_course.Size = new System.Drawing.Size(214, 35);
             this.btn_lec_course.TabIndex = 8;
             this.btn_lec_course.Text = "- Lecturer Courses";
             this.btn_lec_course.UseVisualStyleBackColor = false;
@@ -182,7 +193,7 @@
             // 
             this.btn_timetable.Location = new System.Drawing.Point(3, 314);
             this.btn_timetable.Name = "btn_timetable";
-            this.btn_timetable.Size = new System.Drawing.Size(217, 40);
+            this.btn_timetable.Size = new System.Drawing.Size(234, 40);
             this.btn_timetable.TabIndex = 10;
             this.btn_timetable.Text = "Timetable";
             this.btn_timetable.UseVisualStyleBackColor = true;
@@ -208,16 +219,6 @@
             this.btn_exam.UseVisualStyleBackColor = true;
             this.btn_exam.Click += new System.EventHandler(this.btn_exam_Click);
             // 
-            // btn_staff
-            // 
-            this.btn_staff.Location = new System.Drawing.Point(3, 585);
-            this.btn_staff.Name = "btn_staff";
-            this.btn_staff.Size = new System.Drawing.Size(216, 61);
-            this.btn_staff.TabIndex = 11;
-            this.btn_staff.Text = "Manage Staff";
-            this.btn_staff.UseVisualStyleBackColor = true;
-            this.btn_staff.Click += new System.EventHandler(this.btn_staff_Click);
-            // 
             // btn_user
             // 
             this.btn_user.Location = new System.Drawing.Point(3, 518);
@@ -227,6 +228,16 @@
             this.btn_user.Text = "Manage User";
             this.btn_user.UseVisualStyleBackColor = true;
             this.btn_user.Click += new System.EventHandler(this.btn_user_Click);
+            // 
+            // btn_staff
+            // 
+            this.btn_staff.Location = new System.Drawing.Point(3, 585);
+            this.btn_staff.Name = "btn_staff";
+            this.btn_staff.Size = new System.Drawing.Size(216, 61);
+            this.btn_staff.TabIndex = 11;
+            this.btn_staff.Text = "Manage Staff";
+            this.btn_staff.UseVisualStyleBackColor = true;
+            this.btn_staff.Click += new System.EventHandler(this.btn_staff_Click);
             // 
             // btn_admin
             // 
@@ -238,18 +249,52 @@
             this.btn_admin.UseVisualStyleBackColor = true;
             this.btn_admin.Click += new System.EventHandler(this.btn_admin_Click);
             // 
+            // TopPanel
+            // 
+            this.TopPanel.BackColor = System.Drawing.Color.White;
+            this.TopPanel.Controls.Add(this.logo);
+            this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopPanel.Location = new System.Drawing.Point(0, 0);
+            this.TopPanel.Name = "TopPanel";
+            this.TopPanel.Size = new System.Drawing.Size(1286, 68);
+            this.TopPanel.TabIndex = 9;
+            // 
+            // logo
+            // 
+            this.logo.BackColor = System.Drawing.Color.Transparent;
+            this.logo.Image = global::SMS_Form.Properties.Resources.UNICOM_TIC_LOGO;
+            this.logo.Location = new System.Drawing.Point(3, 3);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(234, 59);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo.TabIndex = 10;
+            this.logo.TabStop = false;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(237, 68);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1049, 769);
+            this.mainPanel.TabIndex = 10;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1286, 837);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.mainMenuPanel);
+            this.Controls.Add(this.TopPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.mainMenuPanel.ResumeLayout(false);
             this.panelLecturerSubmenu.ResumeLayout(false);
+            this.TopPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,5 +316,8 @@
         private System.Windows.Forms.Button btn_staff;
         private System.Windows.Forms.Button btn_user;
         private System.Windows.Forms.Button btn_admin;
+        private System.Windows.Forms.FlowLayoutPanel TopPanel;
+        private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.Panel mainPanel;
     }
 }

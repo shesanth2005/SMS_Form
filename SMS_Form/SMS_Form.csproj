@@ -251,6 +251,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="StudentManagement.resx">
       <DependentUpon>StudentManagement.cs</DependentUpon>
@@ -292,6 +293,10 @@
     <Content Include="bin\Debug\System.Data.SQLite.xml" />
     <Content Include="bin\Debug\x64\SQLite.Interop.dll" />
     <Content Include="bin\Debug\x86\SQLite.Interop.dll" />
+    <None Include="Resources\UNICOM-TIC_LOGO.png" />
+    <Content Include="UNICOM-TIC_LOGO.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
