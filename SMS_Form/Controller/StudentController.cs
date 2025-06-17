@@ -135,7 +135,29 @@ namespace SMS_Form.Controller
             }
 
         }
-    }
+
+        public Student GetStudentByUserId(int userId)
+        {
+            using (var conn = DbConfig.GetConnection())
+            {
+                var command = new SQLiteCommand("SELECT * FROM Students WHERE UserId = @UserId", conn);
+                command.Parameters.AddWithValue("@UserId", userId);
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        Student student = new Student();
+                        student.Id = reader.GetInt32(0);
+                        student.Name = reader.GetString(1);
+                        student.Address = reader.GetString(2);
+                        student.CourseId = reader.GetInt32(3);
+                        student.UserId = reader.GetInt32(4);
+                        return student;
+                    }
+                }
+            }
+            return null;
+    }   }
 }
 
 

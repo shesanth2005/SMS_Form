@@ -12,10 +12,26 @@ namespace SMS_Form
 {
     public partial class Dashboard : Form
     {
-        public string Role { get; set; } // Property to hold the role of the user
-        public Dashboard()
+        private string userRole;
+        private int userId;
+
+        public Dashboard(string role,int uid)
         {
+            userRole = role;
+            userId = uid;
+
             InitializeComponent();
+
+            if (userRole == "Student")
+            { 
+              btn_admin.Visible = false;
+              btn_staff.Visible = false;
+              btn_course.Visible = false;
+              btn_subject.Visible = false;
+              btn_room.Visible = false;
+              btn_lecturer.Visible = false;
+              btn_user.Visible = false;
+            }
         }
 
         private void btn_student_Click(object sender, EventArgs e)
@@ -96,6 +112,7 @@ namespace SMS_Form
             admins.ShowDialog();
         }
 
+        
        
     }
 }

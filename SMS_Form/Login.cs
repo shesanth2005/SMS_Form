@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SMS_Form.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,35 +33,35 @@ namespace SMS_Form
                 {
                     if (user.Password == password.Text)
                     {
-                        // Login successful, redirect to the main form based on user role
-                        //if (user.Role == "Admin")
+                
+                        
+                        //if (user.Role == "Student")
                         //{
-                        //    Dashboard admindashboardForm = new Dashboard();
-                        //    admindashboardForm.Role = "Admin"; // Set the role for the dashboard
-                        //    admindashboardForm.Show();
+                        //  StudentController studentController = new StudentController();
+                        //    var student = studentController.GetStudentByUserId(user.Id);
+                        //    if (student != null)
+                        //    {
+                                
+                        //    }
+                        //    else
+                        //    {
+                        //        MessageBox.Show("Student not found for the given user.");
+                        //    }
+                        //}
+                        //else if (user.Role == "Admin")
+                        //{
+                           
                         //}
                         //else if (user.Role == "Staff")
                         //{
-                        //    Dashboard staffdashboardForm = new Dashboard();
-                        //    staffdashboardForm.Role = "Staff"; // Set the role for the dashboard
-                        //    staffdashboardForm.Show();
-                        //}
-                        //else if (user.Role == "Student")
-                        //{
-                        //    Dashboard studentdashboardForm = new Dashboard();
-                        //    studentdashboardForm.Role = "Student"; // Set the role for the dashboard
-                        //    studentdashboardForm.Show();
+                            
                         //}
                         //else if (user.Role == "Lecturer")
                         //{
-                        //    Dashboard lecturerdashboardForm = new Dashboard();
-                        //    lecturerdashboardForm.Role = "Lecturer"; // Set the role for the dashboard
-                        //    lecturerdashboardForm.Show();
+                          
                         //}
-                        Dashboard dashboardForm = new Dashboard();
-                        dashboardForm.Role = user.Role; // Set the role for the dashboard
-                        
 
+                        Dashboard dashboardForm = new Dashboard(user.Role, user.Id);
 
                         this.Hide(); // Just hide LoginForm
                         dashboardForm.ShowDialog(); // Show Dashboard as modal
