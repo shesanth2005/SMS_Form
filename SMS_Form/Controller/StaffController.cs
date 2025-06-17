@@ -113,5 +113,28 @@ namespace SMS_Form.Controller
                 }
             }
         }
+
+        public Staff GetStaffByUserId(int userId)
+        {
+            using (var conn = DbConfig.GetConnection())
+            {
+                var cmd = new System.Data.SQLite.SQLiteCommand("SELECT * FROM Staffs WHERE UserId = @UserId", conn);
+                cmd.Parameters.AddWithValue("@UserId", userId);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new Staff
+                        {
+                            Id = reader.GetInt32(0),
+                            Name = reader.GetString(1),
+                            StaffRole = reader.GetString(2),
+                            UserId = reader.GetInt32(3)
+                        };
+                    }
+                }
+            }
+            return null; // Return null if no staff found with the given user ID
+        }
     }
 }
