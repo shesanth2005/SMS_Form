@@ -82,5 +82,11 @@ namespace SMS_Form
             Staffs staffs = new Staffs();
             staffs.ShowDialog();
         }
+
+        private void btn_user_Click(object sender, EventArgs e)
+        {
+            Users users = new Users();
+            users.ShowDialog();
+        }
     }
 }

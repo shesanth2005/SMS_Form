@@ -63,7 +63,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(226, 181);
+            this.btn_add.Location = new System.Drawing.Point(226, 180);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(102, 23);
             this.btn_add.TabIndex = 12;
@@ -76,7 +76,7 @@
             this.dgv_admin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_admin.Location = new System.Drawing.Point(46, 231);
             this.dgv_admin.Name = "dgv_admin";
-            this.dgv_admin.Size = new System.Drawing.Size(360, 150);
+            this.dgv_admin.Size = new System.Drawing.Size(554, 150);
             this.dgv_admin.TabIndex = 13;
             this.dgv_admin.SelectionChanged += new System.EventHandler(this.dgv_admin_CellContentClick);
             // 
