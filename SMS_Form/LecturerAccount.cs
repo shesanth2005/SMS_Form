@@ -24,7 +24,7 @@ namespace SMS_Form
         {
             if (string.IsNullOrWhiteSpace(userName.Text) || string.IsNullOrWhiteSpace(password.Text))
             {
-                MessageBox.Show("Please enter both Name and Address.");
+                MessageBox.Show("Please enter both Name and Password.");
                 return;
             }
             if (password.Text.Length < 8)

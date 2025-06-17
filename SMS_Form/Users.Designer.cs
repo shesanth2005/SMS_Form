@@ -31,8 +31,9 @@
             this.name = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
             this.role_comboBox = new System.Windows.Forms.ComboBox();
-            this.btn_add = new System.Windows.Forms.Button();
             this.dgv_admin = new System.Windows.Forms.DataGridView();
+            this.btn_savechange = new System.Windows.Forms.Button();
+            this.delete_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_admin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,16 +62,6 @@
             this.role_comboBox.Size = new System.Drawing.Size(200, 25);
             this.role_comboBox.TabIndex = 11;
             // 
-            // btn_add
-            // 
-            this.btn_add.Location = new System.Drawing.Point(226, 180);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(102, 23);
-            this.btn_add.TabIndex = 12;
-            this.btn_add.Text = "Add admin only";
-            this.btn_add.UseVisualStyleBackColor = true;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
-            // 
             // dgv_admin
             // 
             this.dgv_admin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -80,13 +71,34 @@
             this.dgv_admin.TabIndex = 13;
             this.dgv_admin.SelectionChanged += new System.EventHandler(this.dgv_admin_CellContentClick);
             // 
+            // btn_savechange
+            // 
+            this.btn_savechange.Location = new System.Drawing.Point(307, 187);
+            this.btn_savechange.Name = "btn_savechange";
+            this.btn_savechange.Size = new System.Drawing.Size(198, 23);
+            this.btn_savechange.TabIndex = 14;
+            this.btn_savechange.Text = "Save Changes";
+            this.btn_savechange.UseVisualStyleBackColor = true;
+            this.btn_savechange.Click += new System.EventHandler(this.btn_savechange_Click);
+            // 
+            // delete_button
+            // 
+            this.delete_button.Location = new System.Drawing.Point(46, 187);
+            this.delete_button.Name = "delete_button";
+            this.delete_button.Size = new System.Drawing.Size(198, 23);
+            this.delete_button.TabIndex = 15;
+            this.delete_button.Text = "Delete User";
+            this.delete_button.UseVisualStyleBackColor = true;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
+            // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.delete_button);
+            this.Controls.Add(this.btn_savechange);
             this.Controls.Add(this.dgv_admin);
-            this.Controls.Add(this.btn_add);
             this.Controls.Add(this.role_comboBox);
             this.Controls.Add(this.password);
             this.Controls.Add(this.name);
@@ -103,7 +115,8 @@
         private System.Windows.Forms.TextBox name;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.ComboBox role_comboBox;
-        private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.DataGridView dgv_admin;
+        private System.Windows.Forms.Button btn_savechange;
+        private System.Windows.Forms.Button delete_button;
     }
 }

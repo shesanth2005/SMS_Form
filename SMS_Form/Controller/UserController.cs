@@ -34,7 +34,7 @@ namespace SMS_Form.Controller
         {
             using (var conn = DbConfig.GetConnection())
             {
-                
+
 
                 using (var command = new SQLiteCommand("DELETE FROM Users WHERE UserId = @Id", conn))
                 {
@@ -63,7 +63,7 @@ namespace SMS_Form.Controller
             }
         }
 
-        public List<User> GetAllUsers() 
+        public List<User> GetAllUsers()
         {
             List<User> users = new List<User>();
             using (var conn = DbConfig.GetConnection())
@@ -110,12 +110,55 @@ namespace SMS_Form.Controller
                                 Role = reader.GetString(3)
                             };
                         }
-                    
+
                     }
                 }
             }
             return null; // Return null if no user found with the given ID
 
+        }
+
+        public User Getuserbyusernsme(string username)
+        {
+            using (var conn = DbConfig.GetConnection())
+            {
+                string query = "SELECT UserId, UserName, Password, Role FROM Users WHERE UserName = @Username";
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new User
+                            {
+                                Id = reader.GetInt32(0),
+                                Name = reader.GetString(1),
+                                Password = reader.GetString(2),
+                                Role = reader.GetString(3)
+                            };
+                        }
+                    }
+                }
+            }
+            return null; // Return null if no user found with the given username
+        }
+
+        public string UpdateUser(User user)
+        {
+            using (var conn = DbConfig.GetConnection())
+            {
+                string updateQuery = "UPDATE Users SET UserName = @UserName, Password = @Password, Role = @Role WHERE UserId = @UserId";
+                using (var cmd = new SQLiteCommand(updateQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", user.Id);
+                    cmd.Parameters.AddWithValue("@UserName", user.Name);
+                    cmd.Parameters.AddWithValue("@Password", user.Password);
+                    cmd.Parameters.AddWithValue("@Role", user.Role);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            return "User Updated Successfully";
         }
     }
 }

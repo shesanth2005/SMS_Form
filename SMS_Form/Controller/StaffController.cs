@@ -14,7 +14,7 @@ namespace SMS_Form.Controller
         {
             using (var conn = DbConfig.GetConnection())
             {
-                var cmd = new System.Data.SQLite.SQLiteCommand("INSERT INTO Staffs (Name,StaffRole,UserId) VALUES (@Name,@StaffRole,@UserId)" , conn);
+                var cmd = new System.Data.SQLite.SQLiteCommand("INSERT INTO Staffs (Name,StaffRole,UserId) VALUES (@Name,@StaffRole,@UserId)", conn);
                 cmd.Parameters.AddWithValue("@Name", staff.Name);
                 cmd.Parameters.AddWithValue("@StaffRole", staff.StaffRole); // Assuming StaffRole is a property of Staff
                 cmd.Parameters.AddWithValue("@UserId", staff.UserId);
@@ -87,12 +87,30 @@ namespace SMS_Form.Controller
             {
                 var cmd = new System.Data.SQLite.SQLiteCommand("UPDATE Staffs SET Name = @Name,StaffRole=@StaffRole,UserId=@UserId WHERE Id = @Id", conn);
                 cmd.Parameters.AddWithValue("@Name", staff.Name);
-                
+
                 cmd.Parameters.AddWithValue("@Id", staff.Id);
                 cmd.Parameters.AddWithValue("@UserId", staff.UserId);
                 cmd.Parameters.AddWithValue("@StaffRole", staff.StaffRole); // Assuming StaffRole is a property of Staff
                 cmd.ExecuteNonQuery();
                 return "Staff Updated Successfully";
+            }
+        }
+
+        public bool CheckUserId(int userId)
+        {
+            using (var conn = DbConfig.GetConnection())
+            {
+                var cmd = new System.Data.SQLite.SQLiteCommand("SELECT COUNT(*) FROM Staffs WHERE UserId = @UserId", conn);
+                cmd.Parameters.AddWithValue("@UserId", userId);
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                if (count > 0)
+                {
+                    return true; // User ID exists in Staff Table
+                }
+                else
+                {
+                    return false; // User ID does not exist in Staff Table
+                }
             }
         }
     }

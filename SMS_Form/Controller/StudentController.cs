@@ -117,8 +117,24 @@ namespace SMS_Form.Controller
             }
         }
 
+        public bool CheckUserId(int userId)
+        {
+            using (var conn = DbConfig.GetConnection())
+            {
+                var command = new SQLiteCommand("SELECT COUNT(*) FROM Students WHERE UserId = @UserId", conn);
+                command.Parameters.AddWithValue("@UserId", userId);
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
 
-     
+        }
     }
 }
 
