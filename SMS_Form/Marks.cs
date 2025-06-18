@@ -33,35 +33,33 @@ namespace SMS_Form
                 cmb_exam.Enabled = false; // Hide the exam combo box for students
                 txt_marks.Enabled = false; // Hide the marks text box for students
                 cmb_student.Enabled = false; // Hide the student combo box for students
+              
             }
             else if (Role == "Staff")
             {
              
                 btn_delete_marks.Visible = false; // Hide the delete button for staff
                 LoadMarks();
-                loadStudents();
-                loadexams();
+                
             }
             else if (Role == "Lecturer")
             {
                 
                 btn_delete_marks.Visible = false; // Hide the delete button for lecturers
                 LoadMarks();
-                loadStudents();
-                loadexams();
+             
             }
             else if (Role == "Admin")
             {
                 // Admin has access to all buttons
                 LoadMarks();
-                loadStudents();
-                loadexams();
+                
             }
          
             //LoadMarks();
-            //loadStudents();
-            //loadexams();
-            //clearFields(); // Clear fields on form load
+            loadStudents();
+            loadexams();
+            clearFields(); // Clear fields on form load
             
         }
 
