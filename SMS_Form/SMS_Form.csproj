@@ -102,6 +102,7 @@
     </Compile>
     <Compile Include="Controller\CourseController.cs" />
     <Compile Include="Controller\ExamController.cs" />
+    <Compile Include="Controller\FeedbackController.cs" />
     <Compile Include="Controller\LectureCourseController.cs" />
     <Compile Include="Controller\MarkController.cs" />
     <Compile Include="Controller\RoomController.cs" />
@@ -130,6 +131,12 @@
     </Compile>
     <Compile Include="Exam.Designer.cs">
       <DependentUpon>Exam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feedbacks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feedbacks.Designer.cs">
+      <DependentUpon>Feedbacks.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -163,6 +170,7 @@
     </Compile>
     <Compile Include="Model\Course.cs" />
     <Compile Include="Model\Exam.cs" />
+    <Compile Include="Model\Feedback.cs" />
     <Compile Include="Model\LectureCourse.cs" />
     <Compile Include="Model\Mark.cs" />
     <Compile Include="Model\Room.cs" />
@@ -243,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Exam.resx">
       <DependentUpon>Exam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feedbacks.resx">
+      <DependentUpon>Feedbacks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

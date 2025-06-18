@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.btn_student = new System.Windows.Forms.Button();
             this.btn_course = new System.Windows.Forms.Button();
@@ -46,14 +45,13 @@
             this.btn_staff = new System.Windows.Forms.Button();
             this.btn_admin = new System.Windows.Forms.Button();
             this.TopPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.btn_feedback = new System.Windows.Forms.Button();
             this.mainMenuPanel.SuspendLayout();
             this.panelLecturerSubmenu.SuspendLayout();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_student
@@ -163,12 +161,13 @@
             this.mainMenuPanel.Controls.Add(this.btn_user);
             this.mainMenuPanel.Controls.Add(this.btn_staff);
             this.mainMenuPanel.Controls.Add(this.btn_admin);
+            this.mainMenuPanel.Controls.Add(this.btn_feedback);
             this.mainMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.mainMenuPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.mainMenuPanel.ForeColor = System.Drawing.Color.White;
             this.mainMenuPanel.Location = new System.Drawing.Point(0, 68);
             this.mainMenuPanel.Name = "mainMenuPanel";
-            this.mainMenuPanel.Size = new System.Drawing.Size(237, 769);
+            this.mainMenuPanel.Size = new System.Drawing.Size(237, 843);
             this.mainMenuPanel.TabIndex = 8;
             this.mainMenuPanel.WrapContents = false;
             // 
@@ -287,8 +286,17 @@
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopPanel.Location = new System.Drawing.Point(0, 0);
             this.TopPanel.Name = "TopPanel";
-            this.TopPanel.Size = new System.Drawing.Size(1286, 68);
+            this.TopPanel.Size = new System.Drawing.Size(1424, 68);
             this.TopPanel.TabIndex = 9;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(237, 68);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1187, 843);
+            this.mainPanel.TabIndex = 10;
             // 
             // logo
             // 
@@ -301,20 +309,24 @@
             this.logo.TabIndex = 10;
             this.logo.TabStop = false;
             // 
-            // mainPanel
+            // btn_feedback
             // 
-            this.mainPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(237, 68);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1049, 769);
-            this.mainPanel.TabIndex = 10;
+            this.btn_feedback.FlatAppearance.BorderSize = 0;
+            this.btn_feedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_feedback.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_feedback.Location = new System.Drawing.Point(3, 691);
+            this.btn_feedback.Name = "btn_feedback";
+            this.btn_feedback.Size = new System.Drawing.Size(234, 50);
+            this.btn_feedback.TabIndex = 14;
+            this.btn_feedback.Text = "Feedback";
+            this.btn_feedback.UseVisualStyleBackColor = true;
+            this.btn_feedback.Click += new System.EventHandler(this.btn_feedback_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1286, 837);
+            this.ClientSize = new System.Drawing.Size(1424, 911);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.mainMenuPanel);
             this.Controls.Add(this.TopPanel);
@@ -326,7 +338,6 @@
             this.panelLecturerSubmenu.ResumeLayout(false);
             this.TopPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,6 +362,6 @@
         private System.Windows.Forms.FlowLayoutPanel TopPanel;
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Button btn_feedback;
     }
 }

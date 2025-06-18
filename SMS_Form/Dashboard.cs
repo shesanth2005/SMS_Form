@@ -157,7 +157,10 @@ namespace SMS_Form
             LoadFormInPanel(admins);
         }
 
-        
-       
+        private void btn_feedback_Click(object sender, EventArgs e)
+        {
+            Feedbacks feedbacks = new Feedbacks(userRole);
+            LoadFormInPanel(feedbacks);
+        }
     }
 }
