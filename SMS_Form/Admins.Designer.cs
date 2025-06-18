@@ -43,9 +43,9 @@
             // dgv_admin
             // 
             this.dgv_admin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_admin.Location = new System.Drawing.Point(20, 169);
+            this.dgv_admin.Location = new System.Drawing.Point(20, 166);
             this.dgv_admin.Name = "dgv_admin";
-            this.dgv_admin.Size = new System.Drawing.Size(453, 269);
+            this.dgv_admin.Size = new System.Drawing.Size(453, 272);
             this.dgv_admin.TabIndex = 0;
             // 
             // btn_create
@@ -109,7 +109,7 @@
             // groupBox1
             // 
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(20, 11);
+            this.groupBox1.Location = new System.Drawing.Point(20, 7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(453, 127);
             this.groupBox1.TabIndex = 11;
@@ -121,7 +121,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 146);
+            this.label4.Location = new System.Drawing.Point(17, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 17);
             this.label4.TabIndex = 12;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SMS_Form.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,20 @@ namespace SMS_Form.Controller
         {
             using (var getdbconn = Data.DbConfig.GetConnection())
             {
+                string checkQuery = "SELECT COUNT(*) FROM Marks WHERE StudentId = @studentId AND ExamId = @examId";
+                using (var checkCmd = new System.Data.SQLite.SQLiteCommand(checkQuery, getdbconn))
+                {
+                    checkCmd.Parameters.AddWithValue("@studentId", mark.StudentId);
+                    checkCmd.Parameters.AddWithValue("@examId", mark.ExamId);
+
+                    int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+                    if (count > 0)
+                    {
+                        return "Marks for this student and exam already exist.";
+                    }
+                }
+
+
                 string AddMarkQuery = "INSERT INTO Marks(StudentId, ExamId, Marks) VALUES(@studentid, @examid, @marks)";
                 using (var insertMarkCommand = new System.Data.SQLite.SQLiteCommand(AddMarkQuery, getdbconn))
                 {

@@ -115,6 +115,7 @@ namespace SMS_Form
             dgv_staff.DataSource = staffs;
 
             dgv_staff.Columns["Name"].HeaderText = "Staff Name"; // Rename column header
+            dgv_staff.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
 
@@ -150,6 +151,36 @@ namespace SMS_Form
                 clearform(); // Clear the form fields after deletion
                 MessageBox.Show(result); // Show the result of the deletion operation
             }
+        }
+
+        private void dgv_staff_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void role_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Staffs_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

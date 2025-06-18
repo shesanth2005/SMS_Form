@@ -70,6 +70,7 @@ namespace SMS_Form
                     else
                     {
                         MessageBox.Show("Incorrect Password.");
+                        password.Focus();
                     }
                 }
                

@@ -31,12 +31,15 @@
             this.name = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
             this.btn_login = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // name
             // 
             this.name.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(46, 53);
+            this.name.Location = new System.Drawing.Point(513, 185);
             this.name.Multiline = true;
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(263, 23);
@@ -45,7 +48,7 @@
             // password
             // 
             this.password.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password.Location = new System.Drawing.Point(46, 99);
+            this.password.Location = new System.Drawing.Point(513, 232);
             this.password.Multiline = true;
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(263, 23);
@@ -55,7 +58,7 @@
             // 
             this.btn_login.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btn_login.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_login.Location = new System.Drawing.Point(46, 138);
+            this.btn_login.Location = new System.Drawing.Point(513, 282);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(263, 23);
             this.btn_login.TabIndex = 10;
@@ -63,16 +66,42 @@
             this.btn_login.UseVisualStyleBackColor = false;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(36, 305);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(385, 86);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Unicom TIC";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(507, 450);
+            this.panel1.TabIndex = 12;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.password);
             this.Controls.Add(this.name);
             this.Name = "Login";
             this.Text = "Login";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -83,5 +112,7 @@
         private System.Windows.Forms.TextBox name;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Button btn_login;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

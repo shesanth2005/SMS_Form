@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.btn_student = new System.Windows.Forms.Button();
             this.btn_course = new System.Windows.Forms.Button();
@@ -47,10 +48,12 @@
             this.TopPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.logo = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.mainMenuPanel.SuspendLayout();
             this.panelLecturerSubmenu.SuspendLayout();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_student
@@ -323,6 +326,7 @@
             this.panelLecturerSubmenu.ResumeLayout(false);
             this.TopPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -347,5 +351,6 @@
         private System.Windows.Forms.FlowLayoutPanel TopPanel;
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

@@ -113,6 +113,12 @@ namespace SMS_Form.Data
                             UserId INTEGER NOT NULL,
                             FOREIGN KEY (UserId) REFERENCES Users(UserID) ON DELETE CASCADE
                         );
+                        CREATE TABLE IF NOT EXISTS Feedbacks (
+                        Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        Feedback TEXT NOT NULL,
+                        Role TEXT NOT NULL
+                        );
+
                     ";
 
 
