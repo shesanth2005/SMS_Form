@@ -35,6 +35,7 @@
             this.cmb_student = new System.Windows.Forms.ComboBox();
             this.btn_update_mark = new System.Windows.Forms.Button();
             this.btn_delete_marks = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_marks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             // dgv_marks
             // 
             this.dgv_marks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_marks.Location = new System.Drawing.Point(145, 185);
+            this.dgv_marks.Location = new System.Drawing.Point(38, 178);
             this.dgv_marks.Name = "dgv_marks";
             this.dgv_marks.Size = new System.Drawing.Size(428, 150);
             this.dgv_marks.TabIndex = 3;
@@ -105,11 +106,21 @@
             this.btn_delete_marks.UseVisualStyleBackColor = true;
             this.btn_delete_marks.Click += new System.EventHandler(this.btn_delete_marks_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(13, 23);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(315, 131);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
             // Marks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_delete_marks);
             this.Controls.Add(this.btn_update_mark);
             this.Controls.Add(this.cmb_student);
@@ -134,5 +145,6 @@
         private System.Windows.Forms.ComboBox cmb_student;
         private System.Windows.Forms.Button btn_update_mark;
         private System.Windows.Forms.Button btn_delete_marks;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

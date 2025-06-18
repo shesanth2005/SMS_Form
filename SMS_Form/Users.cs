@@ -63,6 +63,7 @@ namespace SMS_Form
             Controller.UserController userController = new Controller.UserController();
             var users = userController.GetAllUsers();
             dgv_admin.DataSource = users;
+            dgv_admin.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void clearForm()
@@ -192,6 +193,11 @@ namespace SMS_Form
                 clearForm(); // Clear the form after deletion
                 loadusers(); // Reload the users in the DataGridView
             }
+        }
+
+        private void name_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

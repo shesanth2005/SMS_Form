@@ -15,14 +15,47 @@ namespace SMS_Form
     public partial class TimeTable : Form
     {
         private int selectedTimetableId = -1; // To store the ID of the selected timetable for updates
-        public TimeTable()
+        
+        private string Role; // To store the role of the user (e.g., Student, Teacher, Admin, Staff)
+        public TimeTable(string role)
         {
+            Role = role;
             InitializeComponent();
             Loadtimes();
             Loadday();
             LoadRooms();
             LoadSubjects();
             LoadTimetables();
+            if (Role == "Student")
+            {
+                //btn_add.Enabled = false; // Disable add button for students
+                //btn_update.Enabled = false; // Disable update button for students
+                //btn_delete.Enabled = false; // Disable delete button for students
+                btn_add.Visible = false; // Hide add button for students
+                btn_update.Visible = false;
+                btn_delete.Visible = false;
+               
+            }
+            else if (Role == "Lecturer")
+            {
+                btn_add.Visible = false; // Hide add button for students
+                btn_update.Visible = false;
+                btn_delete.Visible = false;
+            }
+            else if (Role == "Admin")
+            {
+                btn_add.Enabled = true; // Enable add button for admins
+                btn_update.Enabled = true; // Enable update button for admins
+                btn_delete.Enabled = true; // Enable delete button for admins
+            }
+            else if (Role == "Staff")
+            {
+                btn_add.Visible = false; // Hide add button for students
+                btn_update.Visible = false;
+                btn_delete.Visible = false;
+            }
+
+         
         }
 
         private void ClearForm()
@@ -296,6 +329,16 @@ namespace SMS_Form
                 MessageBox.Show("Timetable entry deleted successfully.");
 
             }
+        }
+
+        private void roomComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

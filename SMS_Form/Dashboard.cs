@@ -28,11 +28,41 @@ namespace SMS_Form
             { 
               btn_admin.Visible = false;
               btn_staff.Visible = false;
+              btn_student.Visible = false;
               btn_course.Visible = false;
               btn_subject.Visible = false;
               btn_room.Visible = false;
               btn_lecturer.Visible = false;
               btn_user.Visible = false;
+              btn_exam.Visible = false;
+            }
+            else if (userRole == "Staff")
+            {
+                btn_admin.Visible = false;
+                btn_student.Visible = false;
+                btn_course.Visible = false;
+                btn_subject.Visible = false;
+                btn_room.Visible = false;
+                btn_lecturer.Visible = false;
+                btn_user.Visible = false;
+                btn_staff.Visible = false;
+
+            }
+            else if (userRole == "Lecturer")
+            {
+                btn_admin.Visible = false;
+                btn_student.Visible = false;
+                btn_course.Visible = false;
+                btn_subject.Visible = false;
+                btn_room.Visible = false;
+                btn_staff.Visible = false;
+                btn_user.Visible = false;
+                btn_lecturer.Visible = false;
+                btn_exam.Visible = false;
+            }
+            else if (userRole == "Admin")
+            {
+                // Admin has access to all buttons, no changes needed
             }
         }
         private void LoadFormInPanel(Form form)
@@ -92,19 +122,20 @@ namespace SMS_Form
 
         private void btn_timetable_Click(object sender, EventArgs e)
         {
-             TimeTable timeTable = new TimeTable();
+             TimeTable timeTable = new TimeTable(userRole);
+           
              LoadFormInPanel(timeTable);    
         }
 
         private void btn_exam_Click(object sender, EventArgs e)
         {
-            Exam exam = new Exam();
+            Exam exam = new Exam(userRole);
             LoadFormInPanel(exam);
         }
 
         private void btn_marks_Click(object sender, EventArgs e)
         {
-            Marks marks = new Marks();
+            Marks marks = new Marks(userRole,userId);
             LoadFormInPanel(marks);
         }
 

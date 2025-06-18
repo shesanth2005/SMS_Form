@@ -16,9 +16,17 @@ namespace SMS_Form
     public partial class Exam : Form
     {
         private int selectedExamId = -1; // To track the selected exam for updates or deletions
-        public Exam()
+        private string userRole;
+        public Exam(string role)
         {
             InitializeComponent();
+            userRole = role;
+            if(userRole=="Staff")
+            {
+              
+                btn_delete.Visible = false;
+            }
+            
             LoadExams();
             LoadSubjects();
             clearFields();
@@ -152,6 +160,16 @@ namespace SMS_Form
                 LoadExams();
                 clearFields(); // Clear fields after deletion
             }
+        }
+
+        private void dgv_exam_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cmb_subject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     } 
 }

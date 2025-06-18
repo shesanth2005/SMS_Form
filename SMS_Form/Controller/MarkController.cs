@@ -144,5 +144,36 @@ namespace SMS_Form.Controller
             }
             return mark;
         }
+
+        public List<Model.Mark> GetMarksByStudentid(int studentid)
+        {
+            List<Model.Mark> marks = new List<Model.Mark>();
+            string getMarksQuery = @"
+                SELECT m.Id, m.StudentId, m.ExamId, m.Marks, s.Name AS StudentName, e.Name AS ExamName
+                FROM Marks m
+                LEFT JOIN Students s ON m.StudentId = s.Id
+                LEFT JOIN Exams e ON m.ExamId = e.Id
+                WHERE m.StudentId = @studentid";
+            using (var conn = Data.DbConfig.GetConnection())
+            {
+                using (var getMarksCommand = new System.Data.SQLite.SQLiteCommand(getMarksQuery, conn))
+                {
+                    getMarksCommand.Parameters.AddWithValue("@studentid", studentid);
+                    var readers = getMarksCommand.ExecuteReader();
+                    while (readers.Read())
+                    {
+                        Model.Mark mark = new Model.Mark();
+                        mark.Id = readers.GetInt32(0);
+                        mark.StudentId = readers.GetInt32(1);
+                        mark.ExamId = readers.GetInt32(2);
+                        mark.Marks = readers.GetInt32(3);
+                        mark.StudentName = readers.GetString(4);
+                        mark.ExamName = readers.GetString(5);
+                        marks.Add(mark);
+                    }
+                }
+            }
+            return marks;
+        }
     }
 }

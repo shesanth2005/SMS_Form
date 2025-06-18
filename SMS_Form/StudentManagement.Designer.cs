@@ -90,7 +90,7 @@
             // 
             this.name.BackColor = System.Drawing.Color.White;
             this.name.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.ForeColor = System.Drawing.Color.White;
+            this.name.ForeColor = System.Drawing.SystemColors.WindowText;
             this.name.Location = new System.Drawing.Point(142, 27);
             this.name.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.name.Name = "name";
@@ -189,7 +189,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 202);
+            this.label4.Location = new System.Drawing.Point(17, 203);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 17);
             this.label4.TabIndex = 11;

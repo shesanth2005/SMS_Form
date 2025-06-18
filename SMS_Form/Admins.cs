@@ -70,6 +70,12 @@ namespace SMS_Form
             dgv_admin.Columns["Password"].Visible = true; // Hide the Password column
             dgv_admin.Columns["Role"].Visible = false; // Rename Role column header
             dgv_admin.Columns["Name"].HeaderText = "UserName"; // Rename Name column header
+            dgv_admin.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

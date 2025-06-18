@@ -16,13 +16,53 @@ namespace SMS_Form
         private int selectedMarkId = -1; // To track the selected mark for updates or deletions
         private int selectedStudentId = -1; // To track the selected student for adding marks
         private int selectedExamId = -1; // To track the selected exam for adding marks
-        public Marks()
+        private string Role; // To store the role of the user
+        private int userId; // To store the user ID if needed
+        private int studentid; // To store the student ID if needed
+        public Marks(string role,int userid)
         {
             InitializeComponent();
-            LoadMarks();
-            loadStudents();
-            loadexams();
-            clearFields(); // Clear fields on form load
+            Role = role; // Store the role passed to the constructor
+            userId = userid; // Store the user ID passed to the constructor
+            if (Role == "Student")
+            {
+                btn_add.Visible = false; // Hide the add button for students
+                btn_update_mark.Visible = false; // Hide the update button for students
+                btn_delete_marks.Visible = false; // Hide the delete button for students
+                loadmarksbystudentuserid(userId); // Load marks for the student based on user ID
+                cmb_exam.Enabled = false; // Hide the exam combo box for students
+                txt_marks.Enabled = false; // Hide the marks text box for students
+                cmb_student.Enabled = false; // Hide the student combo box for students
+            }
+            else if (Role == "Staff")
+            {
+             
+                btn_delete_marks.Visible = false; // Hide the delete button for staff
+                LoadMarks();
+                loadStudents();
+                loadexams();
+            }
+            else if (Role == "Lecturer")
+            {
+                
+                btn_delete_marks.Visible = false; // Hide the delete button for lecturers
+                LoadMarks();
+                loadStudents();
+                loadexams();
+            }
+            else if (Role == "Admin")
+            {
+                // Admin has access to all buttons
+                LoadMarks();
+                loadStudents();
+                loadexams();
+            }
+         
+            //LoadMarks();
+            //loadStudents();
+            //loadexams();
+            //clearFields(); // Clear fields on form load
+            
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -70,6 +110,40 @@ namespace SMS_Form
             {
                 dgv_marks.Columns["ExamId"].Visible = false; // Hide the ExamId column
             }
+            dgv_marks.Columns["StudentName"].DisplayIndex = 1;
+            dgv_marks.Columns["ExamName"].DisplayIndex = 2;
+            dgv_marks.Columns["Marks"].DisplayIndex = 3;
+
+        }
+        private void loadmarksbystudentuserid(int userid)
+        {
+            StudentController studentController = new StudentController();
+
+            var student = studentController.GetStudentByUserId(userid);
+            if (student != null)
+            {
+                studentid= student.Id; // Get the student ID from the student object
+            }
+            Controller.MarkController markController = new Controller.MarkController();
+            var marks = markController.GetMarksByStudentid(studentid);
+            dgv_marks.DataSource = marks;
+            if (dgv_marks.Columns.Contains("StudentId"))
+            {
+                dgv_marks.Columns["StudentId"].Visible = false; // Hide the StudentId column
+            }
+            if (dgv_marks.Columns.Contains("ExamId"))
+            {
+                dgv_marks.Columns["ExamId"].Visible = false; // Hide the ExamId column
+            }
+            if(dgv_marks.Columns.Contains("Id"))
+            {
+                dgv_marks.Columns["Id"].Visible = false; // Hide the Id column
+            }
+            dgv_marks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_marks.Columns["StudentName"].DisplayIndex = 0;
+            dgv_marks.Columns["ExamName"].DisplayIndex = 1;
+            dgv_marks.Columns["Marks"].DisplayIndex = 2;
+
         }
 
         private void loadStudents()

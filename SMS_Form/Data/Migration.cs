@@ -135,7 +135,7 @@ namespace SMS_Form.Data
 
                     insertAdminCmd.Parameters.AddWithValue("@username", "admin");
                     insertAdminCmd.Parameters.AddWithValue("@password", "admin123"); // Replace with hashed password in real app
-                    insertAdminCmd.Parameters.AddWithValue("@role", "admin");
+                    insertAdminCmd.Parameters.AddWithValue("@role", "Admin");
 
                     insertAdminCmd.ExecuteNonQuery();
 

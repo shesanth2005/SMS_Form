@@ -31,7 +31,7 @@ namespace SMS_Form
             {
                 Name = name.Text,
                 StaffRole = role_comboBox.SelectedItem.ToString(),
-                UserId = UserId
+                UserId = this.UserId
             };
 
             var staffController = new Controller.StaffController();
