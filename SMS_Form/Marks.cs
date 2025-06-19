@@ -111,6 +111,7 @@ namespace SMS_Form
             dgv_marks.Columns["StudentName"].DisplayIndex = 1;
             dgv_marks.Columns["ExamName"].DisplayIndex = 2;
             dgv_marks.Columns["Marks"].DisplayIndex = 3;
+            dgv_marks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
         private void loadmarksbystudentuserid(int userid)
@@ -261,7 +262,7 @@ namespace SMS_Form
             mark.ExamId = Convert.ToInt32(cmb_exam.SelectedValue);
             mark.Marks = int.Parse(txt_marks.Text);
             Controller.MarkController markController = new Controller.MarkController();
-            string result = markController.UpdateMark(mark);
+            string result = markController.UpdateMark(selectedStudentId,selectedExamId,mark);
             MessageBox.Show(result);
             LoadMarks();
             clearFields(); // Clear fields after updating a mark

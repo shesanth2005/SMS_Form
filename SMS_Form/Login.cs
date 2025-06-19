@@ -16,6 +16,9 @@ namespace SMS_Form
         public Login()
         {
             InitializeComponent();
+            password.PasswordChar = '*'; // Set password character for the password textbox
+            
+
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -71,6 +74,7 @@ namespace SMS_Form
                     {
                         MessageBox.Show("Incorrect Password.");
                         password.Focus();
+                        
                     }
                 }
                
@@ -78,8 +82,15 @@ namespace SMS_Form
             else
             {
                 MessageBox.Show("Username does not exist.");
+                name.Focus();
                 return;
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+ 
     }
 }

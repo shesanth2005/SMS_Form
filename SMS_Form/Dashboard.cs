@@ -22,7 +22,8 @@ namespace SMS_Form
 
 
             InitializeComponent();
-         
+            LoadFormInPanel(new Home()); // Load the home form initially
+
 
             if (userRole == "Student")
             { 
@@ -161,6 +162,18 @@ namespace SMS_Form
         {
             Feedbacks feedbacks = new Feedbacks(userRole);
             LoadFormInPanel(feedbacks);
+        }
+
+        private void btn_account_Click(object sender, EventArgs e)
+        {
+            AccountDashboard accountDashboard = new AccountDashboard(userRole, userId);
+            LoadFormInPanel(accountDashboard);
+        }
+
+        private void btb_home_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            LoadFormInPanel(home);
         }
     }
 }

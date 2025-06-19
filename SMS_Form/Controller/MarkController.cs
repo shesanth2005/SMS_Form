@@ -53,10 +53,24 @@ namespace SMS_Form.Controller
             }
         }
 
-        public string UpdateMark(Model.Mark mark)
+        public string UpdateMark(int studentid,int examid,Model.Mark mark)
         {
             using (var getdbconn = Data.DbConfig.GetConnection())
             {
+                string checkQuery = "SELECT COUNT(*) FROM Marks WHERE StudentId = @studentId AND ExamId = @examId";
+                using (var checkCmd = new System.Data.SQLite.SQLiteCommand(checkQuery, getdbconn))
+                {
+                    checkCmd.Parameters.AddWithValue("@studentId", studentid);
+                    checkCmd.Parameters.AddWithValue("@examId", examid);
+
+                    int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+                    if (count > 0)
+                    {
+                        return "Marks for this student and exam already exist.";
+                    }
+                }
+
+
                 string UpdateMarkQuery = "UPDATE Marks SET StudentId = @studentid, ExamId = @examid, Marks = @marks WHERE Id = @id";
                 using (var updateMarkCommand = new System.Data.SQLite.SQLiteCommand(UpdateMarkQuery, getdbconn))
                 {

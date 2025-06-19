@@ -76,6 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountDashboard.Designer.cs">
+      <DependentUpon>AccountDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="AccountStaffcs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="LecturerAccount.cs">
       <SubType>Form</SubType>
@@ -231,6 +243,9 @@
     <Compile Include="Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AccountDashboard.resx">
+      <DependentUpon>AccountDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AccountStaffcs.resx">
       <DependentUpon>AccountStaffcs.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LecturerAccount.resx">
       <DependentUpon>LecturerAccount.cs</DependentUpon>
@@ -323,6 +341,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="400029157_122102106932103975_8374243604086202124_n.png" />
     <Content Include="bin\Debug\SMS_Form.exe" />
     <Content Include="bin\Debug\SMS_Form.pdb" />
     <Content Include="bin\Debug\System.Data.SQLite.dll" />
@@ -330,6 +349,7 @@
     <Content Include="bin\Debug\x64\SQLite.Interop.dll" />
     <Content Include="bin\Debug\x86\SQLite.Interop.dll" />
     <None Include="Resources\UNICOM-TIC_LOGO.png" />
+    <Content Include="Unicom _Tic_home.png" />
     <Content Include="UNICOM-TIC_LOGO.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

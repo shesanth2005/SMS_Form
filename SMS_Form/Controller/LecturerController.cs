@@ -136,16 +136,16 @@ namespace SMS_Form.Controller
             }
 
         }
-        public List<Lecturer> GetLecturersByUserId(int userId)
+        public Lecturer GetLecturersByUserId(int userId)
         {
-            List<Lecturer> lecturers = new List<Lecturer>();
+         
             using (var conn = DbConfig.GetConnection())
             {
                 var cmd = new SQLiteCommand("SELECT * FROM Lecturers WHERE UserId = @UserId", conn);
                 cmd.Parameters.AddWithValue("@UserId", userId);
                 using (var reader = cmd.ExecuteReader())
                 {
-                    while (reader.Read())
+                    if (reader.Read())
                     {
                         Lecturer lecturer = new Lecturer
                         {
@@ -155,11 +155,11 @@ namespace SMS_Form.Controller
                             Telephone = reader.GetString(3),
                             UserId = reader.GetInt32(4)
                         };
-                        lecturers.Add(lecturer);
+                        return lecturer;
                     }
                 }
             }
-            return lecturers;
+            return null; // Return null if no lecturer found with the given userId
 
         }
     }
