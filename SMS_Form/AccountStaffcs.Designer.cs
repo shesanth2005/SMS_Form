@@ -96,6 +96,7 @@
             this.Controls.Add(this.password);
             this.Controls.Add(this.name);
             this.Name = "AccountStaffcs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AccountStaffcs";
             this.ResumeLayout(false);
             this.PerformLayout();

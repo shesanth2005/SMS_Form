@@ -115,6 +115,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.name);
             this.Name = "AddLecturerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Lecturer";
             this.ResumeLayout(false);
             this.PerformLayout();

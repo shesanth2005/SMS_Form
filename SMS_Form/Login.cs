@@ -17,7 +17,8 @@ namespace SMS_Form
         {
             InitializeComponent();
             password.PasswordChar = '*'; // Set password character for the password textbox
-            
+          
+
 
         }
 
@@ -91,6 +92,30 @@ namespace SMS_Form
         {
 
         }
- 
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -98,6 +98,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_add);
             this.Name = "AddStaffForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddStaffForm";
             this.ResumeLayout(false);
             this.PerformLayout();
