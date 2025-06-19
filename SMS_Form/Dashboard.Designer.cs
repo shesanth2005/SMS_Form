@@ -36,6 +36,7 @@
             this.btn_lecturer = new System.Windows.Forms.Button();
             this.btn_lec_dtail = new System.Windows.Forms.Button();
             this.mainMenuPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.btb_home = new System.Windows.Forms.Button();
             this.panelLecturerSubmenu = new System.Windows.Forms.Panel();
             this.btn_lec_course = new System.Windows.Forms.Button();
             this.btn_timetable = new System.Windows.Forms.Button();
@@ -45,11 +46,10 @@
             this.btn_staff = new System.Windows.Forms.Button();
             this.btn_admin = new System.Windows.Forms.Button();
             this.btn_feedback = new System.Windows.Forms.Button();
+            this.btn_account = new System.Windows.Forms.Button();
             this.TopPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.logo = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.btn_account = new System.Windows.Forms.Button();
-            this.btb_home = new System.Windows.Forms.Button();
             this.mainMenuPanel.SuspendLayout();
             this.panelLecturerSubmenu.SuspendLayout();
             this.TopPanel.SuspendLayout();
@@ -171,9 +171,26 @@
             this.mainMenuPanel.ForeColor = System.Drawing.Color.White;
             this.mainMenuPanel.Location = new System.Drawing.Point(0, 68);
             this.mainMenuPanel.Name = "mainMenuPanel";
-            this.mainMenuPanel.Size = new System.Drawing.Size(237, 843);
+            this.mainMenuPanel.Size = new System.Drawing.Size(237, 893);
             this.mainMenuPanel.TabIndex = 8;
             this.mainMenuPanel.WrapContents = false;
+            // 
+            // btb_home
+            // 
+            this.btb_home.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btb_home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.btb_home.FlatAppearance.BorderSize = 0;
+            this.btb_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btb_home.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btb_home.ForeColor = System.Drawing.Color.White;
+            this.btb_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btb_home.Location = new System.Drawing.Point(3, 3);
+            this.btb_home.Name = "btb_home";
+            this.btb_home.Size = new System.Drawing.Size(234, 50);
+            this.btb_home.TabIndex = 16;
+            this.btb_home.Text = "Home";
+            this.btb_home.UseVisualStyleBackColor = false;
+            this.btb_home.Click += new System.EventHandler(this.btb_home_Click);
             // 
             // panelLecturerSubmenu
             // 
@@ -296,6 +313,20 @@
             this.btn_feedback.UseVisualStyleBackColor = true;
             this.btn_feedback.Click += new System.EventHandler(this.btn_feedback_Click);
             // 
+            // btn_account
+            // 
+            this.btn_account.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_account.FlatAppearance.BorderSize = 0;
+            this.btn_account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_account.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_account.Location = new System.Drawing.Point(3, 803);
+            this.btn_account.Name = "btn_account";
+            this.btn_account.Size = new System.Drawing.Size(234, 50);
+            this.btn_account.TabIndex = 15;
+            this.btn_account.Text = "Account";
+            this.btn_account.UseVisualStyleBackColor = true;
+            this.btn_account.Click += new System.EventHandler(this.btn_account_Click);
+            // 
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.White;
@@ -323,45 +354,14 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(237, 68);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1187, 843);
+            this.mainPanel.Size = new System.Drawing.Size(1187, 893);
             this.mainPanel.TabIndex = 10;
-            // 
-            // btn_account
-            // 
-            this.btn_account.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_account.FlatAppearance.BorderSize = 0;
-            this.btn_account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_account.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_account.Location = new System.Drawing.Point(3, 803);
-            this.btn_account.Name = "btn_account";
-            this.btn_account.Size = new System.Drawing.Size(234, 50);
-            this.btn_account.TabIndex = 15;
-            this.btn_account.Text = "Account";
-            this.btn_account.UseVisualStyleBackColor = true;
-            this.btn_account.Click += new System.EventHandler(this.btn_account_Click);
-            // 
-            // btb_home
-            // 
-            this.btb_home.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btb_home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.btb_home.FlatAppearance.BorderSize = 0;
-            this.btb_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btb_home.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btb_home.ForeColor = System.Drawing.Color.White;
-            this.btb_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btb_home.Location = new System.Drawing.Point(3, 3);
-            this.btb_home.Name = "btb_home";
-            this.btb_home.Size = new System.Drawing.Size(234, 50);
-            this.btb_home.TabIndex = 16;
-            this.btb_home.Text = "Home";
-            this.btb_home.UseVisualStyleBackColor = false;
-            this.btb_home.Click += new System.EventHandler(this.btb_home_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1424, 911);
+            this.ClientSize = new System.Drawing.Size(1424, 961);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.mainMenuPanel);
             this.Controls.Add(this.TopPanel);
