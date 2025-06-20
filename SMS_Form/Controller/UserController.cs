@@ -181,7 +181,7 @@ namespace SMS_Form.Controller
         {
             using (var conn = DbConfig.GetConnection())
             {
-                var command = new SQLiteCommand("SELECT UserId, UserName, Password, Role FROM Users WHERE UserName = @UserName", conn);
+                var command = new SQLiteCommand("SELECT UserId, UserName, Password, Role FROM Users WHERE UserName = @UserName", conn);// Query to get user by username
                 command.Parameters.AddWithValue("@UserName", username);
                 using (var reader = command.ExecuteReader())
                 {

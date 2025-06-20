@@ -49,6 +49,7 @@ namespace SMS_Form.Controller
 
         public string AddLectureCourse(Model.LectureCourse lectureCourse)
         {
+            // Check if the lecturer is already assigned to the course
             using (var conn = DbConfig.GetConnection())
             {
                 string checkQuery = "SELECT COUNT(*) FROM LecturerCourse WHERE LecturerId = @lecturerId AND CourseId = @courseId";
@@ -67,7 +68,7 @@ namespace SMS_Form.Controller
 
 
 
-
+                // Insert the new lecturer-course assignment
 
                 string insertQuery = "INSERT INTO LecturerCourse (LecturerId, CourseId) VALUES (@lecturerId, @courseId)";
 
@@ -141,7 +142,7 @@ namespace SMS_Form.Controller
                 string updateQuery = @"
             UPDATE LecturerCourse 
             SET LecturerId = @newLecturerId, CourseId = @newCourseId 
-            WHERE LecturerId = @oldLecturerId AND CourseId = @oldCourseId";
+            WHERE LecturerId = @oldLecturerId AND CourseId = @oldCourseId";// Update the WHERE clause to use old values
 
                 using (var cmd = new SQLiteCommand(updateQuery, conn))
                 {

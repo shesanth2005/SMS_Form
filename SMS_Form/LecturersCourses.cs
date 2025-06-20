@@ -207,8 +207,7 @@ namespace SMS_Form
 
             Model.LectureCourse lectureCourse = new Model.LectureCourse();
 
-            //LecturerId = selectedLectureId,
-            //CourseId = selectedCourseId
+            
 
             if (oldLectureId == selectedLectureId && oldCourseId == selectedCourseId)
             {
@@ -238,7 +237,7 @@ namespace SMS_Form
             // Show message
             MessageBox.Show(message);
             LoadLecturerCourses();
-            ClearForm();
+            ClearForm();// Clear the form after update
 
 
         }
@@ -254,7 +253,7 @@ namespace SMS_Form
                 {
                 
 
-                    oldCourseId = lecturerCourseView.CourseId;
+                    oldCourseId = lecturerCourseView.CourseId; 
                     oldLectureId = lecturerCourseView.LecturerId;
                    
 
