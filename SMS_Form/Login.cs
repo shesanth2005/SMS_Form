@@ -24,67 +24,41 @@ namespace SMS_Form
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            var userController = new Controller.UserController();
-            if (string.IsNullOrWhiteSpace(name.Text) || string.IsNullOrWhiteSpace(password.Text))
+            var userController = new Controller.UserController();// Create an instance of UserController
+            if (string.IsNullOrWhiteSpace(name.Text) || string.IsNullOrWhiteSpace(password.Text))// Check if either field is empty
             {
-                MessageBox.Show("Please enter both Username and Password.");
-                return;
+                MessageBox.Show("Please enter both Username and Password.");// Show message if either field is empty
+                return;                                                     // Exit the method if fields are empty
             }
-            if (userController.CheckUserName(name.Text))
+            if (userController.CheckUserName(name.Text))// Check if the username exists in the database
             {
-                var user = userController.GetUserByUsername(name.Text);
-                if (user != null)
+                var user = userController.GetUserByUsername(name.Text);// Retrieve the user details by username
+                if (user != null)                                      //check if user is not null
                 {
-                    if (user.Password == password.Text)
+                    if (user.Password == password.Text)               // Compare the entered password with the stored password
                     {
                 
                         
-                        //if (user.Role == "Student")
-                        //{
-                        //  StudentController studentController = new StudentController();
-                        //    var student = studentController.GetStudentByUserId(user.Id);
-                        //    if (student != null)
-                        //    {
-                                
-                        //    }
-                        //    else
-                        //    {
-                        //        MessageBox.Show("Student not found for the given user.");
-                        //    }
-                        //}
-                        //else if (user.Role == "Admin")
-                        //{
-                           
-                        //}
-                        //else if (user.Role == "Staff")
-                        //{
-                            
-                        //}
-                        //else if (user.Role == "Lecturer")
-                        //{
-                          
-                        //}
-
-                        Dashboard dashboardForm = new Dashboard(user.Role, user.Id);
+                        Dashboard dashboardForm = new Dashboard(user.Role, user.Id);// Create a new instance of Dashboard with user role and ID
 
                         this.Hide(); // Just hide LoginForm
                         dashboardForm.ShowDialog(); // Show Dashboard as modal
-                        this.Close(); 
+                        this.Close(); //After Dashboard is closed, close LoginForm
                     }
                     else
                     {
-                        MessageBox.Show("Incorrect Password.");
-                        password.Focus();
-                        
+                        MessageBox.Show("Incorrect Password.");// Show message if password is incorrect
+                        password.Focus();                      // Set focus back to password textbox
+
                     }
                 }
                
             }
             else
             {
-                MessageBox.Show("Username does not exist.");
-                name.Focus();
-                return;
+                MessageBox.Show("Username does not exist.");// Show message if username does not exist
+                name.Focus();                               // Set focus back to username textbox
+                return;                                     // Exit the method if username does not exist
             }
         }
 
