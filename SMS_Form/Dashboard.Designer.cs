@@ -93,7 +93,7 @@
             this.btn_subject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_subject.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_subject.ForeColor = System.Drawing.Color.White;
-            this.btn_subject.Location = new System.Drawing.Point(3, 299);
+            this.btn_subject.Location = new System.Drawing.Point(3, 467);
             this.btn_subject.Name = "btn_subject";
             this.btn_subject.Size = new System.Drawing.Size(234, 50);
             this.btn_subject.TabIndex = 2;
@@ -108,7 +108,7 @@
             this.btn_room.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_room.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_room.ForeColor = System.Drawing.Color.White;
-            this.btn_room.Location = new System.Drawing.Point(3, 243);
+            this.btn_room.Location = new System.Drawing.Point(3, 523);
             this.btn_room.Name = "btn_room";
             this.btn_room.Size = new System.Drawing.Size(234, 50);
             this.btn_room.TabIndex = 3;
@@ -155,15 +155,15 @@
             this.mainMenuPanel.Controls.Add(this.btn_student);
             this.mainMenuPanel.Controls.Add(this.btn_lecturer);
             this.mainMenuPanel.Controls.Add(this.panelLecturerSubmenu);
-            this.mainMenuPanel.Controls.Add(this.btn_room);
-            this.mainMenuPanel.Controls.Add(this.btn_subject);
-            this.mainMenuPanel.Controls.Add(this.btn_timetable);
-            this.mainMenuPanel.Controls.Add(this.btn_course);
-            this.mainMenuPanel.Controls.Add(this.btn_marks);
-            this.mainMenuPanel.Controls.Add(this.btn_exam);
-            this.mainMenuPanel.Controls.Add(this.btn_user);
             this.mainMenuPanel.Controls.Add(this.btn_staff);
             this.mainMenuPanel.Controls.Add(this.btn_admin);
+            this.mainMenuPanel.Controls.Add(this.btn_user);
+            this.mainMenuPanel.Controls.Add(this.btn_course);
+            this.mainMenuPanel.Controls.Add(this.btn_subject);
+            this.mainMenuPanel.Controls.Add(this.btn_room);
+            this.mainMenuPanel.Controls.Add(this.btn_timetable);
+            this.mainMenuPanel.Controls.Add(this.btn_exam);
+            this.mainMenuPanel.Controls.Add(this.btn_marks);
             this.mainMenuPanel.Controls.Add(this.btn_feedback);
             this.mainMenuPanel.Controls.Add(this.btn_account);
             this.mainMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -227,7 +227,7 @@
             this.btn_timetable.FlatAppearance.BorderSize = 0;
             this.btn_timetable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_timetable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_timetable.Location = new System.Drawing.Point(3, 355);
+            this.btn_timetable.Location = new System.Drawing.Point(3, 579);
             this.btn_timetable.Name = "btn_timetable";
             this.btn_timetable.Size = new System.Drawing.Size(234, 50);
             this.btn_timetable.TabIndex = 10;
@@ -240,7 +240,7 @@
             this.btn_marks.FlatAppearance.BorderSize = 0;
             this.btn_marks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_marks.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_marks.Location = new System.Drawing.Point(3, 467);
+            this.btn_marks.Location = new System.Drawing.Point(3, 691);
             this.btn_marks.Name = "btn_marks";
             this.btn_marks.Size = new System.Drawing.Size(234, 50);
             this.btn_marks.TabIndex = 9;
@@ -253,7 +253,7 @@
             this.btn_exam.FlatAppearance.BorderSize = 0;
             this.btn_exam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exam.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_exam.Location = new System.Drawing.Point(3, 523);
+            this.btn_exam.Location = new System.Drawing.Point(3, 635);
             this.btn_exam.Name = "btn_exam";
             this.btn_exam.Size = new System.Drawing.Size(234, 50);
             this.btn_exam.TabIndex = 9;
@@ -266,7 +266,7 @@
             this.btn_user.FlatAppearance.BorderSize = 0;
             this.btn_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_user.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_user.Location = new System.Drawing.Point(3, 579);
+            this.btn_user.Location = new System.Drawing.Point(3, 355);
             this.btn_user.Name = "btn_user";
             this.btn_user.Size = new System.Drawing.Size(234, 50);
             this.btn_user.TabIndex = 12;
@@ -279,7 +279,7 @@
             this.btn_staff.FlatAppearance.BorderSize = 0;
             this.btn_staff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_staff.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_staff.Location = new System.Drawing.Point(3, 635);
+            this.btn_staff.Location = new System.Drawing.Point(3, 243);
             this.btn_staff.Name = "btn_staff";
             this.btn_staff.Size = new System.Drawing.Size(234, 50);
             this.btn_staff.TabIndex = 11;
@@ -292,7 +292,7 @@
             this.btn_admin.FlatAppearance.BorderSize = 0;
             this.btn_admin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_admin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_admin.Location = new System.Drawing.Point(3, 691);
+            this.btn_admin.Location = new System.Drawing.Point(3, 299);
             this.btn_admin.Name = "btn_admin";
             this.btn_admin.Size = new System.Drawing.Size(234, 50);
             this.btn_admin.TabIndex = 13;
