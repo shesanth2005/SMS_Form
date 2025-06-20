@@ -45,6 +45,7 @@
             // 
             // name
             // 
+            this.name.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name.Location = new System.Drawing.Point(125, 18);
             this.name.Multiline = true;
             this.name.Name = "name";
@@ -54,6 +55,7 @@
             // 
             // password
             // 
+            this.password.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.Location = new System.Drawing.Point(125, 52);
             this.password.Multiline = true;
             this.password.Name = "password";
@@ -62,6 +64,7 @@
             // 
             // role_comboBox
             // 
+            this.role_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.role_comboBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.role_comboBox.FormattingEnabled = true;
             this.role_comboBox.Location = new System.Drawing.Point(145, 107);

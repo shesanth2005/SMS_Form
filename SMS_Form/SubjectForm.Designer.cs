@@ -47,6 +47,7 @@
             // 
             // course_comboBox
             // 
+            this.course_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.course_comboBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.course_comboBox.FormattingEnabled = true;
             this.course_comboBox.Location = new System.Drawing.Point(142, 62);

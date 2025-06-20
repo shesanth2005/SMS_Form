@@ -172,5 +172,40 @@ namespace SMS_Form
             }
 
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string keyword = txtsearch.Text.ToLower().Trim();
+
+            StudentController studentController = new StudentController();
+            List<Student> allStudents = studentController.GetAllStudent();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                // If search box is empty, show all students
+                StudentView.DataSource = allStudents;
+            }
+            else
+            {
+                // Filter by Name, Id, CourseName, or Address
+                var filteredStudents = allStudents
+                    .Where(s => (s.Name != null && s.Name.ToLower().Contains(keyword))
+                             || s.Id.ToString().Contains(keyword)
+                             || (s.CourseName != null && s.CourseName.ToLower().Contains(keyword))
+                             || (s.Address != null && s.Address.ToLower().Contains(keyword)))
+                    .ToList();
+
+                StudentView.DataSource = filteredStudents;
+            }
+
+            if (StudentView.Columns.Contains("CourseId"))
+            {
+                StudentView.Columns["CourseId"].Visible = false;
+            }
+
+            StudentView.ClearSelection();
+            StudentView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            StudentView.Columns["CourseName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        }
     }
 }

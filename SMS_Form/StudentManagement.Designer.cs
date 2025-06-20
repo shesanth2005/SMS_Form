@@ -42,6 +42,8 @@
             this.StudentView = new System.Windows.Forms.DataGridView();
             this.student_groupBox = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.StudentView)).BeginInit();
             this.student_groupBox.SuspendLayout();
             this.SuspendLayout();
@@ -158,7 +160,7 @@
             // 
             this.StudentView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.StudentView.GridColor = System.Drawing.Color.Black;
-            this.StudentView.Location = new System.Drawing.Point(20, 227);
+            this.StudentView.Location = new System.Drawing.Point(20, 259);
             this.StudentView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.StudentView.Name = "StudentView";
             this.StudentView.Size = new System.Drawing.Size(453, 307);
@@ -189,18 +191,40 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 203);
+            this.label4.Location = new System.Drawing.Point(17, 235);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Student Records";
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.Location = new System.Drawing.Point(20, 206);
+            this.txtsearch.Multiline = true;
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(322, 25);
+            this.txtsearch.TabIndex = 12;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(349, 206);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(124, 25);
+            this.btnSearch.TabIndex = 13;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // StudentManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(496, 542);
+            this.ClientSize = new System.Drawing.Size(496, 594);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.StudentView);
             this.Controls.Add(this.btn_add);
@@ -237,5 +261,7 @@
         private System.Windows.Forms.DataGridView StudentView;
         private System.Windows.Forms.GroupBox student_groupBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

@@ -50,6 +50,7 @@
             // 
             // comboBoxStarttime
             // 
+            this.comboBoxStarttime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStarttime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxStarttime.FormattingEnabled = true;
             this.comboBoxStarttime.Location = new System.Drawing.Point(461, 40);
@@ -71,6 +72,7 @@
             // 
             // comboBoxDay
             // 
+            this.comboBoxDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDay.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDay.FormattingEnabled = true;
             this.comboBoxDay.Location = new System.Drawing.Point(239, 40);
@@ -80,9 +82,10 @@
             // 
             // roomComboBox
             // 
+            this.roomComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.roomComboBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roomComboBox.FormattingEnabled = true;
-            this.roomComboBox.Location = new System.Drawing.Point(682, 40);
+            this.roomComboBox.Location = new System.Drawing.Point(865, 40);
             this.roomComboBox.Name = "roomComboBox";
             this.roomComboBox.Size = new System.Drawing.Size(121, 25);
             this.roomComboBox.TabIndex = 4;
@@ -90,6 +93,7 @@
             // 
             // subjectcomboBox
             // 
+            this.subjectcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.subjectcomboBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subjectcomboBox.FormattingEnabled = true;
             this.subjectcomboBox.Location = new System.Drawing.Point(73, 40);
@@ -160,9 +164,10 @@
             // 
             // comboBoxEndtime
             // 
+            this.comboBoxEndtime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEndtime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxEndtime.FormattingEnabled = true;
-            this.comboBoxEndtime.Location = new System.Drawing.Point(865, 40);
+            this.comboBoxEndtime.Location = new System.Drawing.Point(682, 40);
             this.comboBoxEndtime.Name = "comboBoxEndtime";
             this.comboBoxEndtime.Size = new System.Drawing.Size(121, 25);
             this.comboBoxEndtime.TabIndex = 12;
