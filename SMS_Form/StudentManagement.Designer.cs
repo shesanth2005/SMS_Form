@@ -199,6 +199,7 @@
             // 
             // txtsearch
             // 
+            this.txtsearch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsearch.Location = new System.Drawing.Point(20, 206);
             this.txtsearch.Multiline = true;
             this.txtsearch.Name = "txtsearch";
