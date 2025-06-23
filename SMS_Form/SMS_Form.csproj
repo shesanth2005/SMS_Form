@@ -358,6 +358,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="SchoolDB.db" />
+    <None Include="Unicom TIC Management System Document %284%29.docx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
