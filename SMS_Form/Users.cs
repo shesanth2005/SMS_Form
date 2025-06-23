@@ -142,9 +142,6 @@ namespace SMS_Form
             loadusers();
             clearForm();
 
-
-
-
         }
  
 
