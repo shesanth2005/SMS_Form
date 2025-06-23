@@ -175,5 +175,11 @@ namespace SMS_Form
             Home home = new Home();
             LoadFormInPanel(home);
         }
+
+        private void btn_studymaterials_Click(object sender, EventArgs e)
+        {
+            Studymaterials studymaterials = new Studymaterials(userRole);
+            LoadFormInPanel(studymaterials);
+        }
     }
 }

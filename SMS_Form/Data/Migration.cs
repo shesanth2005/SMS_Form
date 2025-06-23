@@ -118,6 +118,12 @@ namespace SMS_Form.Data
                         Feedback TEXT NOT NULL,
                         Role TEXT NOT NULL
                         );
+                        CREATE TABLE IF NOT EXISTS StudyMaterials (
+                         Id    INTEGER PRIMARY KEY AUTOINCREMENT,
+                         Name  TEXT    NOT NULL,
+                         Link  TEXT    NOT NULL
+                        );
+
 
                     ";
 

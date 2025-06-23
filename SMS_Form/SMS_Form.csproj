@@ -128,6 +128,7 @@
     <Compile Include="Controller\RoomController.cs" />
     <Compile Include="Controller\StaffController.cs" />
     <Compile Include="Controller\StudentController.cs" />
+    <Compile Include="Controller\StudymaterialController.cs" />
     <Compile Include="Controller\SubjectController.cs" />
     <Compile Include="Controller\LecturerController.cs" />
     <Compile Include="Controller\TimetableController.cs" />
@@ -202,6 +203,7 @@
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\Staff.cs" />
     <Compile Include="Model\Student.cs" />
+    <Compile Include="Model\Studymaterial.cs" />
     <Compile Include="Model\Subject.cs" />
     <Compile Include="Model\Lecturer.cs" />
     <Compile Include="Model\Timetable.cs" />
@@ -232,6 +234,12 @@
     </Compile>
     <Compile Include="StudentManagement.Designer.cs">
       <DependentUpon>StudentManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Studymaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Studymaterials.Designer.cs">
+      <DependentUpon>Studymaterials.cs</DependentUpon>
     </Compile>
     <Compile Include="SubjectForm.cs">
       <SubType>Form</SubType>
@@ -323,6 +331,9 @@
     </Compile>
     <EmbeddedResource Include="StudentManagement.resx">
       <DependentUpon>StudentManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Studymaterials.resx">
+      <DependentUpon>Studymaterials.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectForm.resx">
       <DependentUpon>SubjectForm.cs</DependentUpon>

@@ -39,17 +39,18 @@
             this.btb_home = new System.Windows.Forms.Button();
             this.panelLecturerSubmenu = new System.Windows.Forms.Panel();
             this.btn_lec_course = new System.Windows.Forms.Button();
-            this.btn_timetable = new System.Windows.Forms.Button();
-            this.btn_marks = new System.Windows.Forms.Button();
-            this.btn_exam = new System.Windows.Forms.Button();
-            this.btn_user = new System.Windows.Forms.Button();
             this.btn_staff = new System.Windows.Forms.Button();
             this.btn_admin = new System.Windows.Forms.Button();
+            this.btn_user = new System.Windows.Forms.Button();
+            this.btn_timetable = new System.Windows.Forms.Button();
+            this.btn_exam = new System.Windows.Forms.Button();
+            this.btn_marks = new System.Windows.Forms.Button();
             this.btn_feedback = new System.Windows.Forms.Button();
             this.btn_account = new System.Windows.Forms.Button();
             this.TopPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.logo = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.btn_studymaterials = new System.Windows.Forms.Button();
             this.mainMenuPanel.SuspendLayout();
             this.panelLecturerSubmenu.SuspendLayout();
             this.TopPanel.SuspendLayout();
@@ -165,13 +166,14 @@
             this.mainMenuPanel.Controls.Add(this.btn_exam);
             this.mainMenuPanel.Controls.Add(this.btn_marks);
             this.mainMenuPanel.Controls.Add(this.btn_feedback);
+            this.mainMenuPanel.Controls.Add(this.btn_studymaterials);
             this.mainMenuPanel.Controls.Add(this.btn_account);
             this.mainMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.mainMenuPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.mainMenuPanel.ForeColor = System.Drawing.Color.White;
             this.mainMenuPanel.Location = new System.Drawing.Point(0, 68);
             this.mainMenuPanel.Name = "mainMenuPanel";
-            this.mainMenuPanel.Size = new System.Drawing.Size(237, 893);
+            this.mainMenuPanel.Size = new System.Drawing.Size(237, 943);
             this.mainMenuPanel.TabIndex = 8;
             this.mainMenuPanel.WrapContents = false;
             // 
@@ -221,59 +223,6 @@
             this.btn_lec_course.UseVisualStyleBackColor = false;
             this.btn_lec_course.Click += new System.EventHandler(this.btn_lec_course_Click);
             // 
-            // btn_timetable
-            // 
-            this.btn_timetable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.btn_timetable.FlatAppearance.BorderSize = 0;
-            this.btn_timetable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_timetable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_timetable.Location = new System.Drawing.Point(3, 579);
-            this.btn_timetable.Name = "btn_timetable";
-            this.btn_timetable.Size = new System.Drawing.Size(234, 50);
-            this.btn_timetable.TabIndex = 10;
-            this.btn_timetable.Text = "Timetable";
-            this.btn_timetable.UseVisualStyleBackColor = false;
-            this.btn_timetable.Click += new System.EventHandler(this.btn_timetable_Click);
-            // 
-            // btn_marks
-            // 
-            this.btn_marks.FlatAppearance.BorderSize = 0;
-            this.btn_marks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_marks.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_marks.Location = new System.Drawing.Point(3, 691);
-            this.btn_marks.Name = "btn_marks";
-            this.btn_marks.Size = new System.Drawing.Size(234, 50);
-            this.btn_marks.TabIndex = 9;
-            this.btn_marks.Text = "Marks";
-            this.btn_marks.UseVisualStyleBackColor = true;
-            this.btn_marks.Click += new System.EventHandler(this.btn_marks_Click);
-            // 
-            // btn_exam
-            // 
-            this.btn_exam.FlatAppearance.BorderSize = 0;
-            this.btn_exam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exam.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_exam.Location = new System.Drawing.Point(3, 635);
-            this.btn_exam.Name = "btn_exam";
-            this.btn_exam.Size = new System.Drawing.Size(234, 50);
-            this.btn_exam.TabIndex = 9;
-            this.btn_exam.Text = "Exam";
-            this.btn_exam.UseVisualStyleBackColor = true;
-            this.btn_exam.Click += new System.EventHandler(this.btn_exam_Click);
-            // 
-            // btn_user
-            // 
-            this.btn_user.FlatAppearance.BorderSize = 0;
-            this.btn_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_user.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_user.Location = new System.Drawing.Point(3, 355);
-            this.btn_user.Name = "btn_user";
-            this.btn_user.Size = new System.Drawing.Size(234, 50);
-            this.btn_user.TabIndex = 12;
-            this.btn_user.Text = "Manage User";
-            this.btn_user.UseVisualStyleBackColor = true;
-            this.btn_user.Click += new System.EventHandler(this.btn_user_Click);
-            // 
             // btn_staff
             // 
             this.btn_staff.FlatAppearance.BorderSize = 0;
@@ -300,6 +249,59 @@
             this.btn_admin.UseVisualStyleBackColor = true;
             this.btn_admin.Click += new System.EventHandler(this.btn_admin_Click);
             // 
+            // btn_user
+            // 
+            this.btn_user.FlatAppearance.BorderSize = 0;
+            this.btn_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_user.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_user.Location = new System.Drawing.Point(3, 355);
+            this.btn_user.Name = "btn_user";
+            this.btn_user.Size = new System.Drawing.Size(234, 50);
+            this.btn_user.TabIndex = 12;
+            this.btn_user.Text = "Manage User";
+            this.btn_user.UseVisualStyleBackColor = true;
+            this.btn_user.Click += new System.EventHandler(this.btn_user_Click);
+            // 
+            // btn_timetable
+            // 
+            this.btn_timetable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.btn_timetable.FlatAppearance.BorderSize = 0;
+            this.btn_timetable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_timetable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_timetable.Location = new System.Drawing.Point(3, 579);
+            this.btn_timetable.Name = "btn_timetable";
+            this.btn_timetable.Size = new System.Drawing.Size(234, 50);
+            this.btn_timetable.TabIndex = 10;
+            this.btn_timetable.Text = "Timetable";
+            this.btn_timetable.UseVisualStyleBackColor = false;
+            this.btn_timetable.Click += new System.EventHandler(this.btn_timetable_Click);
+            // 
+            // btn_exam
+            // 
+            this.btn_exam.FlatAppearance.BorderSize = 0;
+            this.btn_exam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exam.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exam.Location = new System.Drawing.Point(3, 635);
+            this.btn_exam.Name = "btn_exam";
+            this.btn_exam.Size = new System.Drawing.Size(234, 50);
+            this.btn_exam.TabIndex = 9;
+            this.btn_exam.Text = "Exam";
+            this.btn_exam.UseVisualStyleBackColor = true;
+            this.btn_exam.Click += new System.EventHandler(this.btn_exam_Click);
+            // 
+            // btn_marks
+            // 
+            this.btn_marks.FlatAppearance.BorderSize = 0;
+            this.btn_marks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_marks.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_marks.Location = new System.Drawing.Point(3, 691);
+            this.btn_marks.Name = "btn_marks";
+            this.btn_marks.Size = new System.Drawing.Size(234, 50);
+            this.btn_marks.TabIndex = 9;
+            this.btn_marks.Text = "Marks";
+            this.btn_marks.UseVisualStyleBackColor = true;
+            this.btn_marks.Click += new System.EventHandler(this.btn_marks_Click);
+            // 
             // btn_feedback
             // 
             this.btn_feedback.FlatAppearance.BorderSize = 0;
@@ -319,7 +321,7 @@
             this.btn_account.FlatAppearance.BorderSize = 0;
             this.btn_account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_account.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_account.Location = new System.Drawing.Point(3, 803);
+            this.btn_account.Location = new System.Drawing.Point(3, 859);
             this.btn_account.Name = "btn_account";
             this.btn_account.Size = new System.Drawing.Size(234, 50);
             this.btn_account.TabIndex = 15;
@@ -354,14 +356,27 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(237, 68);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1187, 893);
+            this.mainPanel.Size = new System.Drawing.Size(1187, 943);
             this.mainPanel.TabIndex = 10;
+            // 
+            // btn_studymaterials
+            // 
+            this.btn_studymaterials.FlatAppearance.BorderSize = 0;
+            this.btn_studymaterials.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_studymaterials.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_studymaterials.Location = new System.Drawing.Point(3, 803);
+            this.btn_studymaterials.Name = "btn_studymaterials";
+            this.btn_studymaterials.Size = new System.Drawing.Size(234, 50);
+            this.btn_studymaterials.TabIndex = 17;
+            this.btn_studymaterials.Text = "Study Materials";
+            this.btn_studymaterials.UseVisualStyleBackColor = true;
+            this.btn_studymaterials.Click += new System.EventHandler(this.btn_studymaterials_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1424, 961);
+            this.ClientSize = new System.Drawing.Size(1424, 1011);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.mainMenuPanel);
             this.Controls.Add(this.TopPanel);
@@ -400,5 +415,6 @@
         private System.Windows.Forms.Button btn_feedback;
         private System.Windows.Forms.Button btn_account;
         private System.Windows.Forms.Button btb_home;
+        private System.Windows.Forms.Button btn_studymaterials;
     }
 }
