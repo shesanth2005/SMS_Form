@@ -57,11 +57,12 @@ namespace SMS_Form.Controller
         {
             using (var getdbconn = Data.DbConfig.GetConnection())
             {
-                string checkQuery = "SELECT COUNT(*) FROM Marks WHERE StudentId = @studentId AND ExamId = @examId";
+                string checkQuery = "SELECT COUNT(*) FROM Marks WHERE StudentId = @studentId AND ExamId = @examId AND Id!=@id";
                 using (var checkCmd = new System.Data.SQLite.SQLiteCommand(checkQuery, getdbconn))
                 {
                     checkCmd.Parameters.AddWithValue("@studentId", studentid);
                     checkCmd.Parameters.AddWithValue("@examId", examid);
+                    checkCmd.Parameters.AddWithValue("@id", mark.Id);
 
                     int count = Convert.ToInt32(checkCmd.ExecuteScalar());
                     if (count > 0)
