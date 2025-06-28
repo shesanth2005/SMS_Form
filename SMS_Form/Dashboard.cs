@@ -181,5 +181,12 @@ namespace SMS_Form
             Studymaterials studymaterials = new Studymaterials(userRole);
             LoadFormInPanel(studymaterials);
         }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            this.Hide(); // Hide the Dashboard form
+            Login loginForm = new Login(); // Create a new instance of the Login form
+            loginForm.ShowDialog(); // Show the Login form
+        }
     }
 }

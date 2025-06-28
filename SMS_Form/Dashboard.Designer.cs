@@ -46,11 +46,12 @@
             this.btn_exam = new System.Windows.Forms.Button();
             this.btn_marks = new System.Windows.Forms.Button();
             this.btn_feedback = new System.Windows.Forms.Button();
+            this.btn_studymaterials = new System.Windows.Forms.Button();
             this.btn_account = new System.Windows.Forms.Button();
             this.TopPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.logo = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.btn_studymaterials = new System.Windows.Forms.Button();
+            this.btn_logout = new System.Windows.Forms.Button();
             this.mainMenuPanel.SuspendLayout();
             this.panelLecturerSubmenu.SuspendLayout();
             this.TopPanel.SuspendLayout();
@@ -168,6 +169,7 @@
             this.mainMenuPanel.Controls.Add(this.btn_feedback);
             this.mainMenuPanel.Controls.Add(this.btn_studymaterials);
             this.mainMenuPanel.Controls.Add(this.btn_account);
+            this.mainMenuPanel.Controls.Add(this.btn_logout);
             this.mainMenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.mainMenuPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.mainMenuPanel.ForeColor = System.Drawing.Color.White;
@@ -315,6 +317,19 @@
             this.btn_feedback.UseVisualStyleBackColor = true;
             this.btn_feedback.Click += new System.EventHandler(this.btn_feedback_Click);
             // 
+            // btn_studymaterials
+            // 
+            this.btn_studymaterials.FlatAppearance.BorderSize = 0;
+            this.btn_studymaterials.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_studymaterials.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_studymaterials.Location = new System.Drawing.Point(3, 803);
+            this.btn_studymaterials.Name = "btn_studymaterials";
+            this.btn_studymaterials.Size = new System.Drawing.Size(234, 50);
+            this.btn_studymaterials.TabIndex = 17;
+            this.btn_studymaterials.Text = "Study Materials";
+            this.btn_studymaterials.UseVisualStyleBackColor = true;
+            this.btn_studymaterials.Click += new System.EventHandler(this.btn_studymaterials_Click);
+            // 
             // btn_account
             // 
             this.btn_account.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -359,18 +374,20 @@
             this.mainPanel.Size = new System.Drawing.Size(1187, 943);
             this.mainPanel.TabIndex = 10;
             // 
-            // btn_studymaterials
+            // btn_logout
             // 
-            this.btn_studymaterials.FlatAppearance.BorderSize = 0;
-            this.btn_studymaterials.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_studymaterials.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_studymaterials.Location = new System.Drawing.Point(3, 803);
-            this.btn_studymaterials.Name = "btn_studymaterials";
-            this.btn_studymaterials.Size = new System.Drawing.Size(234, 50);
-            this.btn_studymaterials.TabIndex = 17;
-            this.btn_studymaterials.Text = "Study Materials";
-            this.btn_studymaterials.UseVisualStyleBackColor = true;
-            this.btn_studymaterials.Click += new System.EventHandler(this.btn_studymaterials_Click);
+            this.btn_logout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_logout.FlatAppearance.BorderSize = 0;
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.btn_logout.Location = new System.Drawing.Point(3, 915);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(234, 50);
+            this.btn_logout.TabIndex = 18;
+            this.btn_logout.Text = "Log out";
+            this.btn_logout.UseVisualStyleBackColor = true;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // Dashboard
             // 
@@ -416,5 +433,6 @@
         private System.Windows.Forms.Button btn_account;
         private System.Windows.Forms.Button btb_home;
         private System.Windows.Forms.Button btn_studymaterials;
+        private System.Windows.Forms.Button btn_logout;
     }
 }
